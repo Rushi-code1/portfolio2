@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading with Female Voice</title>
+    <style>
+        /* Basic styles for loading message */
+        #loadingMessage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #333;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading message that will be shown before content loads -->
+    <div id="loadingMessage">Loading, please wait...</div>
+
+    <!-- Your website content -->
+    <div id="content" style="display:none;">
+        <h1>Welcome to My Website!</h1>
+        <p>This content will be shown after the page fully loads.</p>
+    </div>
+
+    <script>
+        // Function to speak text using Web Speech API with a female voice
+        function speak(text) {
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'en-US';  // You can adjust the language as needed
+
+            // Get available voices
+            const voices = window.speechSynthesis.getVoices();
+
+            // Find a female voice (if available)
+            const femaleVoice = voices.find(voice => voice.name.includes('Female') || voice.gender === 'female');
+
+            // If a female voice is found, use it
+            if (femaleVoice) {
+                msg.voice = femaleVoice;
+            }
+
+            // Speak the text
+            window.speechSynthesis.speak(msg);
+        }
+
+        // JavaScript to handle loading message and voice
+        window.onload = function () {
+            // Hide loading message after 2 seconds
+            setTimeout(function () {
+                document.getElementById('loadingMessage').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 1000);  // Keep loading message visible for 2 seconds (for demonstration)
+        };
+
+        // Speak the loading message when the page starts loading
+        // Wait for voices to load before speaking
+        window.speechSynthesis.onvoiceschanged = function() {
+            speak('Loading, please wait...');
+        };
+    </script>
+</body>
+</html>
