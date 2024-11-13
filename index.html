@@ -42,11 +42,11 @@
     <header class="z-10 pointer-events-none flex items-center justify-between w-full px-4 mt-4 max-w-screen-xl mx-auto">
       <img src="assets/icons/logo-white.svg" alt="" width="40px">
       <div class="flex gap-4 pointer-events-auto">
-          <a style="color:#4CAF50 ;" href="#Let's Connect" class="text-lg">ContactUS</a>
+        <a style="color:#4CAF50 ;" href="#Let's Connect" class="text-lg">ContactUS</a>
 
-          <a style="color:#4CAF50 ;" href="tel:9824989238"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-phone">
+        <a style="color:#4CAF50 ;" href="tel:9824989238"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="feather feather-phone">
             <path
               d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
             </path>
@@ -88,15 +88,15 @@
             </linearGradient>
           </defs>
         </svg>
-        <div class="relative ml-4 md:ml-12">
+        <div class="relative ml-6 md:ml-12">
           <h1 class="pointer-events-none text-4xl md:text-[45px] font-['Spartan'] mr-12">
             Rushikesh Deshmukh
           </h1>
           <p class="title  animated-text">Full Stack Developer</p>
+
           <button id="popupButton"
             class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group">
             About Me
-
             <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
               xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -119,84 +119,87 @@
               </g>
             </svg>
           </button>
-          <div id="popup" class="popup hidden">
+          <div id="popup" class="popup hidden max-w-screen-xl mx-auto px-4" >
             <div class="square">
+                <h1 class="cen">Rushikesh Deshmukh 👨‍💻</h1>
+                <p>I am a Software Engineer with expertise in developing and deploying AI/ML models and web
+                  applications. My technical skills include Python, JavaScript, Flask, Django, and more. I have a
+                  passion for creating efficient software solutions and have experience in both backend and frontend
+                  technologies.</p>
 
-              <div id="aboutMe">
-                 <h1>Rushikesh Deshmukh 👨‍💻</h1>  
-    <p>I am a Software Engineer with expertise in developing and deploying AI/ML models and web applications. My technical skills include Python, JavaScript, Flask, Django, and more. I have a passion for creating efficient software solutions and have experience in both backend and frontend technologies.</p>  
-    
-    <h3>Education 📚:</h3>  
-    <p>Bachelor of Engineering in Computer Science (CGPA: 8.33)</p>  
-    
-    <h3>Key Projects 🚀:</h3>  
-    <ul>  
-        <li>AI-Powered Conversational Chatbot</li>  
-        <li>Machine Learning Project</li>  
-        <li>Restaurant Web App</li>  
-    </ul>  
-    
-    <h3>Technical Skills ⚙️:</h3>  
-    <p>Python, TensorFlow, Flask, Django, HTML, CSS, ReactJS, AWS</p>  
-    
-    <h3>Experience 🏢:</h3>  
-    <p>Internships at Let’s Grow More and Edufabric Pvt. Ltd.</p>  
-    
-    <h3>Connect with Me 🌐:</h3>  
-    <p>  
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |   
-        <a href="https://github.com/yourprofile" target="_blank">GitHub</a>  
-    </p>  
-    
-    <button class="button">Close ❌</button> 
-          </div>
+                <h3>Education 📚:</h3>
+                <p>Bachelor of Engineering in Computer Science (CGPA: 8.33)</p>
+
+                <h3>Key Projects 🚀:</h3>
+                <ul>
+                  <li>AI-Powered Conversational Chatbot</li>
+                  <li>Machine Learning Project</li>
+                  <li>Restaurant Web App</li>
+                </ul>
+
+                <h3>Technical Skills ⚙️:</h3>
+                <p>Python, TensorFlow, Flask, Django, HTML, CSS, ReactJS, AWS</p>
+
+                <h3>Experience 🏢:</h3>
+                <p>Internships at Let’s Grow More and Edufabric Pvt. Ltd.</p>
+
+                <h3>Connect with Me 🌐:</h3>
+                <p>
+                  <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                  <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+                </p>
+
+                <a onclick="close()" id="close" class= "button bob">Close ❌</a>
+
+              </div>
+            </div>
           </div>
         </div>
+
+        <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
+          <li>
+            <a style="color:#4CAF50 ;" href="https://www.linkedin.com/in/rd-rushikesh-deshmukh/" target="_blank">
+              <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a style="color:#4CAF50 ;" href="mailto:deshmukhrushi3432@gmail.com" target="_blank">
+              <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor"
+                  d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a style="color:#4CAF50 ;" href="https://github.com/Rushi-code1/">
+              <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.089-.745.084-.73.084-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.236-3.221-.123-.304-.536-1.53.117-3.19 0 0 1.008-.323 3.301 1.23.957-.267 1.983-.4 3.003-.404 1.02.004 2.046.137 3.003.404 2.29-1.554 3.296-1.23 3.296-1.23.656 1.66.243 2.886.12 3.19.771.84 1.233 1.911 1.233 3.221 0 4.61-2.805 5.624-5.477 5.921.43.372.823 1.102.823 2.222v3.293c0 .32.19.694.803.576C20.565 22.09 24 17.597 24 12.297c0-6.627-5.373-12-12-12z" />
+              </svg>
+
+            </a>
+          </li>
+        </ul>
       </div>
+      <div
+        class="relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:left-1/2 after:-translate-x-1/2 after:top-[100px]">
+        <button
+          class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group mb-20">
+          <a href="#Latest Works">Latest Works</a>
 
-      <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
-        <li>
-          <a style="color:#4CAF50 ;" href="https://www.linkedin.com/in/rd-rushikesh-deshmukh/" target="_blank">
-            <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path fill="currentColor"
-                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-            </svg>
-          </a>
-        </li>
-       
-        <li>
-          <a style="color:#4CAF50 ;" href="mailto:deshmukhrushi3432@gmail.com" target="_blank">
-            <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path fill="currentColor"
-                d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a style="color:#4CAF50 ;" href="https://github.com/Rushi-code1/">
-            <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.089-.745.084-.73.084-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.236-3.221-.123-.304-.536-1.53.117-3.19 0 0 1.008-.323 3.301 1.23.957-.267 1.983-.4 3.003-.404 1.02.004 2.046.137 3.003.404 2.29-1.554 3.296-1.23 3.296-1.23.656 1.66.243 2.886.12 3.19.771.84 1.233 1.911 1.233 3.221 0 4.61-2.805 5.624-5.477 5.921.43.372.823 1.102.823 2.222v3.293c0 .32.19.694.803.576C20.565 22.09 24 17.597 24 12.297c0-6.627-5.373-12-12-12z" />
-            </svg>
-            
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      class="relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:left-1/2 after:-translate-x-1/2 after:top-[100px]">
-      <button
-        class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group mb-20">
-        <a href="#Latest Works">Latest Works</a>
-
-        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
-          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
-          xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-          xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" width="44"
-          height="44" viewBox="0 0 100 100"
-          class="absolute rotate-90 left-1/2 -translate-x-1/2 top-11 group-hover:top-12 ease-in-out duration-100">
-          <g transform="translate(0,-952.36218)">
-            <path style="
+          <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" width="44"
+            height="44" viewBox="0 0 100 100"
+            class="absolute rotate-90 left-1/2 -translate-x-1/2 top-11 group-hover:top-12 ease-in-out duration-100">
+            <g transform="translate(0,-952.36218)">
+              <path style="
                   text-indent: 0;
                   text-transform: none;
                   direction: ltr;
@@ -205,13 +208,13 @@
                   color: #000000;
                   enable-background: accumulate;
                 "
-              d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z"
-              fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible"
-              display="inline" overflow="visible" />
-          </g>
-        </svg>
-      </button>
-    </div>
+                d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z"
+                fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible"
+                display="inline" overflow="visible" />
+            </g>
+          </svg>
+        </button>
+      </div>
   </section>
   <section name="Latest Works" class="max-w-screen-xl mx-auto px-4 relative pb-8 sm:pb-16">
     <h2 id="Latest Works"
@@ -246,7 +249,8 @@
         </h3>
         <span class="text-[#459bd5] text-base md:text-lg">(Chatbot development platfrom)</span>
         <p class="text-justify text-sm md:text-base mt-2">
-          Developed a sophisticated chatbot generator utilizing machine learning algorithms for natural language processing.
+          Developed a sophisticated chatbot generator utilizing machine learning algorithms for natural language
+          processing.
         </p>
 
         <ul class="flex flex-wrap gap-2 mt-2">
@@ -284,11 +288,12 @@
     <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
       <div class="order-2 sm:order-1 w-full">
         <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
-          Indian News Center 
+          Indian News Center
         </h3>
         <span class="text-[#ffe578] text-base md:text-lg">(News Articles)</span>
         <p class="text-justify text-sm md:text-base mt-2">
-          Built a news aggregation platform that collects and displays news articles and videos from various Indian news channels.
+          Built a news aggregation platform that collects and displays news articles and videos from various Indian news
+          channels.
         </p>
 
         <ul class="flex flex-wrap gap-2 mt-2">
@@ -373,7 +378,8 @@
         </h3>
         <span class="text-[#fc815c] text-base md:text-lg">(Table Booking)</span>
         <p class="text-justify text-sm md:text-base mt-2">
-          The webapp enables restaurant owners to maintain an online presence, manage menus, process orders, and interact with customers seamlessly.
+          The webapp enables restaurant owners to maintain an online presence, manage menus, process orders, and
+          interact with customers seamlessly.
         </p>
 
         <ul class="flex flex-wrap gap-2 mt-2">
@@ -405,7 +411,9 @@
         </h3>
         <span class="text-[#47afa1] text-base md:text-lg">(Recommendation System)</span>
         <p class="text-justify text-sm md:text-base mt-2">
-          This project is an Anime Recommendation System built using Python, pandas, and Streamlit. It allows users to explore anime data, filter by genre and type, and receive personalized anime recommendations. The app can either load a default dataset or allow users to upload their own anime dataset for custom recommendations.
+          This project is an Anime Recommendation System built using Python, pandas, and Streamlit. It allows users to
+          explore anime data, filter by genre and type, and receive personalized anime recommendations. The app can
+          either load a default dataset or allow users to upload their own anime dataset for custom recommendations.
         </p>
 
         <ul class="flex flex-wrap gap-2 mt-2">
@@ -444,7 +452,8 @@
           <img class="max-w-[400px] w-full relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
             src="./assets/images/project4.png" alt="" />
           <span
-            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#47afa1] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Recommendation System <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#47afa1] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Recommendation
+            System <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="feather feather-external-link">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -465,7 +474,8 @@
           <img class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
             src="./assets/images/Screenshot_2024-10-17_114147-removebg-preview.png" alt="" />
           <span
-            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#fc815c] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"> Power BI
+            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#fc815c] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">
+            Power BI
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="feather feather-external-link">
@@ -483,7 +493,8 @@
         </h3>
         <span class="text-[#fc815c] text-base md:text-lg">Power BI Dashboard</span>
         <p class="text-justify text-sm md:text-base mt-2">
-          Developed an interactive COVID-19 Data Analysis BI Dashboard using Power BI to visualize trends, track cases, and support data-driven decision-making for public health insights
+          Developed an interactive COVID-19 Data Analysis BI Dashboard using Power BI to visualize trends, track cases,
+          and support data-driven decision-making for public health insights
         </p>
 
         <ul class="flex flex-wrap gap-2 mt-2">
@@ -578,7 +589,7 @@
           </svg>
         </a>
       </li>
-     
+
       <li>
         <a style="color:#4CAF50 ;" href="mailto:deshmukhrushi3432@gmail.com" target="_blank">
           <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -593,7 +604,7 @@
             <path
               d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.089-.745.084-.73.084-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.236-3.221-.123-.304-.536-1.53.117-3.19 0 0 1.008-.323 3.301 1.23.957-.267 1.983-.4 3.003-.404 1.02.004 2.046.137 3.003.404 2.29-1.554 3.296-1.23 3.296-1.23.656 1.66.243 2.886.12 3.19.771.84 1.233 1.911 1.233 3.221 0 4.61-2.805 5.624-5.477 5.921.43.372.823 1.102.823 2.222v3.293c0 .32.19.694.803.576C20.565 22.09 24 17.597 24 12.297c0-6.627-5.373-12-12-12z" />
           </svg>
-          
+
         </a>
       </li>
     </ul>

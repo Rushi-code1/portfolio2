@@ -79,15 +79,23 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.cen{
+    text-align: center;
+
+}
+
+.bob{
+    text-align: end;
+}
 #close{
-    padding: 10px 20px;
-    margin-top: 24%;
-    background-color: #4CAF50;
     color: white;
     border: none;
+    margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
+    text-align: end;
 }
 
 .popup-container {
