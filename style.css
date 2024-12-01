@@ -4,7 +4,7 @@
 .popup {
     position: fixed;
     width: 28%;
-    height: 75%;
+    height: 65%;
     top: 50%;
     left: 78%;
     transform: translate(-50%, -50%);
