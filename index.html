@@ -3,44 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rushikesh Deshmukh | Backend Software Developer</title>
-  <meta name="description" content="Portfolio of Rushikesh Deshmukh - Backend Software Developer specializing in Python, Django DRF, FastAPI, PostgreSQL, AWS Cloud, and GenAI." />
+  <title>Rushikesh Deshmukh | Backend Software Developer & Cloud Engineer</title>
+  <meta name="description" content="Portfolio of Rushikesh Deshmukh - Backend Software Developer specializing in Python, Django DRF, FastAPI, PostgreSQL, AWS Cloud, Celery, and GenAI." />
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo-white.svg" />
   
-  <!-- Google Fonts & Tailwind CDN -->
+  <!-- Fonts & Tailwind CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Custom CSS -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-[#0a0f1d] text-slate-100 antialiased relative min-h-screen selection:bg-sky-500 selection:text-white">
+<body class="bg-[#050811] text-slate-100 antialiased relative min-h-screen selection:bg-sky-500 selection:text-white cyber-grid">
 
-  <!-- Glow Background Accents -->
-  <div class="glow-bg bg-sky-600 w-[450px] h-[450px] top-10 left-1/4"></div>
-  <div class="glow-bg bg-indigo-600 w-[400px] h-[400px] top-96 right-10"></div>
-  <div class="glow-bg bg-emerald-600 w-[350px] h-[350px] bottom-40 left-10"></div>
+  <!-- Interactive Background Canvas -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Glowing Ambient Halos -->
+  <div class="fixed top-[-100px] left-[15%] w-[500px] h-[500px] bg-sky-500/15 rounded-full blur-[120px] pointer-events-none animate-pulse-halo z-0"></div>
+  <div class="fixed top-[40%] right-[-100px] w-[550px] h-[550px] bg-indigo-500/15 rounded-full blur-[130px] pointer-events-none animate-pulse-halo z-0"></div>
+  <div class="fixed bottom-[-100px] left-[5%] w-[450px] h-[450px] bg-emerald-500/15 rounded-full blur-[120px] pointer-events-none animate-pulse-halo z-0"></div>
 
   <!-- NAVIGATION BAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#050811]/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
-        <!-- Logo -->
+        
+        <!-- Logo Brand -->
         <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center p-2 shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-400 via-indigo-500 to-purple-600 p-[1px] shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-[#070b18] rounded-xl flex items-center justify-center font-mono font-bold text-sky-400 text-sm">
+              RD
+            </div>
           </div>
           <div>
-            <span class="font-bold text-lg tracking-tight text-white group-hover:text-sky-400 transition-colors">Rushikesh<span class="text-sky-400">.dev</span></span>
-            <span class="hidden sm:block text-[11px] text-slate-400 font-mono">Backend Developer</span>
+            <span class="font-display font-bold text-lg tracking-tight text-white group-hover:text-sky-400 transition-colors">
+              Rushikesh<span class="text-sky-400">.dev</span>
+            </span>
+            <span class="hidden sm:block text-[10px] text-slate-400 font-mono tracking-wider">BACKEND ENGINEER</span>
           </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
+        <!-- Desktop Menu Links -->
         <div class="hidden md:flex items-center gap-7 text-sm font-medium">
           <a href="#about" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">About</a>
           <a href="#skills" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Skills</a>
@@ -50,19 +56,21 @@
           <a href="#contact" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Contact</a>
         </div>
 
-        <!-- Action Buttons -->
+        <!-- Action CTAs -->
         <div class="hidden md:flex items-center gap-3">
+          <button id="voice-btn" class="p-2.5 rounded-xl border border-sky-500/30 bg-sky-500/10 text-sky-400 hover:bg-sky-500/20 transition-all hover:scale-105" title="Listen to Voice Intro">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.77H8l-4 4v-14l4 4h3.5l4.5-4.5v15l-4.5-4.5z"/></svg>
+          </button>
+          
           <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf"
-             class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 rounded-lg shadow-md shadow-sky-500/25 transition-all duration-200 hover:shadow-sky-500/40 hover:-translate-y-0.5">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Resume PDF
+             class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 rounded-xl shadow-lg shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Resume PDF</span>
           </a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 focus:outline-none" aria-label="Toggle menu">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 focus:outline-none" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
@@ -70,353 +78,430 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-slate-800/80 px-4 pt-3 pb-5 space-y-2">
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#070c1a] border-t border-white/10 px-4 pt-3 pb-6 space-y-2">
       <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
       <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">Skills</a>
       <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400">Experience</a>
       <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">Projects</a>
       <a href="#education" class="block py-2 text-slate-300 hover:text-sky-400">Education</a>
       <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">Contact</a>
-      <div class="pt-2">
+      <div class="pt-3 flex gap-2">
         <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf"
-           class="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold text-white bg-sky-500 rounded-lg">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
+           class="flex-1 text-center py-2.5 text-xs font-semibold text-white bg-sky-500 rounded-xl">
           Download Resume PDF
         </a>
       </div>
     </div>
   </nav>
 
-  <main class="pt-24 sm:pt-28">
+  <main class="relative z-10 pt-24 sm:pt-28">
 
     <!-- HERO SECTION -->
-    <section id="home" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
+    <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left Hero Content -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
           
           <!-- Status Pill -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide shadow-sm">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Available for Software Developer Roles
+            Open to Backend & Python Developer Opportunities
           </div>
 
-          <!-- Main Heading -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Hi, I'm <span class="gradient-text">Rushikesh Deshmukh</span>
+          <!-- Main Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
+            Hi, I'm <br class="hidden sm:inline" /><span class="gradient-text-sky">Rushikesh Deshmukh</span>
           </h1>
 
           <!-- Dynamic Role Typewriter -->
-          <div class="text-xl sm:text-2xl font-semibold text-slate-300 min-h-[36px] flex items-center justify-center lg:justify-start gap-2">
+          <div class="text-xl sm:text-2xl font-semibold text-slate-300 min-h-[40px] flex items-center justify-center lg:justify-start gap-2">
             <span class="text-sky-400">⚡</span>
             <span id="typewriter-text" class="text-sky-400 font-mono border-r-2 border-sky-400 pr-1"></span>
           </div>
 
           <!-- Bio -->
-          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-            Backend Software Developer with <strong class="text-white">1.5+ years of experience</strong> engineering scalable microservices with <strong class="text-sky-300">Python (Django DRF, FastAPI)</strong>, <strong class="text-sky-300">PostgreSQL</strong>, and <strong class="text-sky-300">AWS Cloud</strong>. Passionate about query optimization, asynchronous queues (Celery/Redis), and Generative AI integration.
+          <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Backend Software Developer with <strong class="text-white">1.5+ years of experience</strong> engineering high-throughput microservices using <strong class="text-sky-300">Python (Django DRF, FastAPI)</strong>, <strong class="text-sky-300">PostgreSQL</strong>, and <strong class="text-sky-300">AWS Cloud</strong>. Specialized in eliminating N+1 queries, distributed task queues (Celery & Redis), and LLM integration with LangChain.
           </p>
 
-          <!-- CTA Buttons -->
+          <!-- Buttons -->
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
-              <span>View Projects</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
+              <span>Explore Projects</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
-            <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf" class="px-6 py-3 rounded-xl glass-card text-slate-200 hover:text-white hover:border-sky-500/40 font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
-              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Download Resume
-            </a>
-            <a href="#contact" class="px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200">
-              Get in Touch
+            <button id="open-modal-btn" class="px-6 py-3.5 rounded-xl spotlight-card text-slate-200 hover:text-white font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
+              <span>About Me</span>
+              <span class="text-xs text-sky-400">⚡</span>
+            </button>
+            <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200 flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Resume
             </a>
           </div>
 
-          <!-- Social Links Bar -->
-          <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 text-slate-400">
-            <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="p-2.5 rounded-lg glass-card hover:text-sky-400 hover:border-sky-500/40 transition-colors" title="LinkedIn Profile">
+          <!-- Social Links -->
+          <div class="flex items-center justify-center lg:justify-start gap-3.5 pt-3 text-slate-400">
+            <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="p-3 rounded-xl spotlight-card hover:text-sky-400 transition-colors" title="LinkedIn Profile">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </a>
-            <a href="https://github.com/rushi-code1" target="_blank" class="p-2.5 rounded-lg glass-card hover:text-sky-400 hover:border-sky-500/40 transition-colors" title="GitHub Profile">
+            <a href="https://github.com/rushi-code1" target="_blank" class="p-3 rounded-xl spotlight-card hover:text-sky-400 transition-colors" title="GitHub Profile">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
-            <a href="mailto:rushikesh.deshmukh1103@gmail.com" class="p-2.5 rounded-lg glass-card hover:text-sky-400 hover:border-sky-500/40 transition-colors" title="Send Email">
+            <a href="mailto:rushikesh.deshmukh1103@gmail.com" class="p-3 rounded-xl spotlight-card hover:text-sky-400 transition-colors" title="Email Rushikesh">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </a>
-            <a href="https://wa.me/918468970166?text=Hi%20Rushikesh,%20I%20saw%20your%20portfolio" target="_blank" class="p-2.5 rounded-lg glass-card hover:text-emerald-400 hover:border-emerald-500/40 transition-colors" title="WhatsApp Chat">
+            <a href="https://wa.me/918468970166?text=Hi%20Rushikesh,%20I%20saw%20your%20portfolio" target="_blank" class="p-3 rounded-xl spotlight-card hover:text-emerald-400 transition-colors" title="WhatsApp Message">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Right Hero Interactive Card / Metrics -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md">
-            
-            <!-- Main Glass Card -->
-            <div class="glass-card p-6 sm:p-8 rounded-3xl relative z-10 border-slate-700/60 shadow-2xl">
+        <!-- Right Hero Interactive Code Terminal -->
+        <div class="lg:col-span-6 relative">
+          <div class="animated-glow-border shadow-2xl">
+            <div class="p-5 sm:p-6 rounded-[calc(1.25rem-1px)]">
               
-              <!-- Card Header -->
-              <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
-                <div class="flex items-center gap-3">
-                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-xl shadow-lg">
-                    👨‍💻
-                  </div>
-                  <div>
-                    <h2 class="font-bold text-base text-white">Rushikesh Deshmukh</h2>
-                    <p class="text-xs text-sky-400 font-mono">Pune, Maharashtra</p>
-                  </div>
+              <!-- macOS Window Header -->
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
                 </div>
-                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                  Backend Engineer
-                </span>
+                
+                <!-- Terminal Tabs -->
+                <div class="flex items-center gap-1 font-mono text-xs">
+                  <button class="terminal-tab px-3 py-1 rounded-md text-sky-400 bg-slate-800/80 border border-sky-500/30" data-tab="pane-python">
+                    developer.py
+                  </button>
+                  <button class="terminal-tab px-3 py-1 rounded-md text-slate-400 hover:text-slate-200" data-tab="pane-stack">
+                    stack.json
+                  </button>
+                  <button class="terminal-tab px-3 py-1 rounded-md text-slate-400 hover:text-slate-200" data-tab="pane-aws">
+                    aws_arch.sh
+                  </button>
+                </div>
+
+                <!-- Run Button -->
+                <button id="terminal-run-btn" class="px-2.5 py-1 rounded-md bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-500/30 text-[11px] font-mono font-bold flex items-center gap-1 transition-all">
+                  <span>▶</span> Run
+                </button>
               </div>
 
-              <!-- Metrics Grid -->
-              <div class="grid grid-cols-2 gap-4 mb-6">
-                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-sky-500/30 transition-all">
-                  <div class="text-2xl font-bold text-sky-400">1.5+ <span class="text-xs font-normal text-slate-400">Years</span></div>
-                  <div class="text-xs text-slate-400 mt-1">Backend Experience</div>
+              <!-- Terminal Code Panes -->
+              <div class="font-mono text-xs leading-relaxed overflow-x-auto min-h-[220px]">
+                
+                <!-- Python Pane -->
+                <div id="pane-python" class="terminal-pane space-y-1.5 text-slate-300">
+                  <p><span class="text-purple-400">class</span> <span class="text-yellow-300">BackendDeveloper</span>:</p>
+                  <p class="pl-4"><span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(<span class="text-orange-400">self</span>):</p>
+                  <p class="pl-8"><span class="text-orange-400">self</span>.name = <span class="text-emerald-400">"Rushikesh Deshmukh"</span></p>
+                  <p class="pl-8"><span class="text-orange-400">self</span>.role = <span class="text-emerald-400">"Backend Software Developer"</span></p>
+                  <p class="pl-8"><span class="text-orange-400">self</span>.core_stack = [<span class="text-emerald-400">"Python"</span>, <span class="text-emerald-400">"Django DRF"</span>, <span class="text-emerald-400">"FastAPI"</span>]</p>
+                  <p class="pl-8"><span class="text-orange-400">self</span>.cloud_infra = [<span class="text-emerald-400">"AWS EC2"</span>, <span class="text-emerald-400">"S3"</span>, <span class="text-emerald-400">"RDS PostgreSQL"</span>]</p>
+                  <p class="pl-8"><span class="text-orange-400">self</span>.genai = <span class="text-emerald-400">"LangChain & Google Gemini 1.5"</span></p>
+                  <p class="pl-4"><span class="text-purple-400">def</span> <span class="text-blue-400">optimize_database</span>(<span class="text-orange-400">self</span>):</p>
+                  <p class="pl-8"><span class="text-purple-400">return</span> {<span class="text-emerald-400">"latency_cut"</span>: <span class="text-yellow-400">"35%"</span>, <span class="text-emerald-400">"test_coverage"</span>: <span class="text-yellow-400">"85%+"</span>}</p>
                 </div>
-                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/30 transition-all">
-                  <div class="text-2xl font-bold text-emerald-400">35% <span class="text-xs font-normal text-slate-400">Cut</span></div>
-                  <div class="text-xs text-slate-400 mt-1">DB Query Latency</div>
+
+                <!-- JSON Stack Pane -->
+                <div id="pane-stack" class="terminal-pane hidden space-y-1 text-slate-300">
+                  <p>{</p>
+                  <p class="pl-4"><span class="text-sky-400">"frameworks"</span>: [<span class="text-emerald-400">"Django"</span>, <span class="text-emerald-400">"DRF"</span>, <span class="text-emerald-400">"FastAPI"</span>, <span class="text-emerald-400">"Celery"</span>],</p>
+                  <p class="pl-4"><span class="text-sky-400">"databases"</span>: [<span class="text-emerald-400">"PostgreSQL"</span>, <span class="text-emerald-400">"Redis"</span>, <span class="text-emerald-400">"MySQL"</span>, <span class="text-emerald-400">"MongoDB"</span>],</p>
+                  <p class="pl-4"><span class="text-sky-400">"aws_services"</span>: [<span class="text-emerald-400">"EC2"</span>, <span class="text-emerald-400">"S3"</span>, <span class="text-emerald-400">"RDS"</span>, <span class="text-emerald-400">"IAM"</span>, <span class="text-emerald-400">"Security Groups"</span>],</p>
+                  <p class="pl-4"><span class="text-sky-400">"testing"</span>: [<span class="text-emerald-400">"PyTest"</span>, <span class="text-emerald-400">"unittest"</span>, <span class="text-emerald-400">"Mocking"</span>]</p>
+                  <p>}</p>
                 </div>
-                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-indigo-500/30 transition-all">
-                  <div class="text-2xl font-bold text-indigo-400">85%+ <span class="text-xs font-normal text-slate-400">Cov</span></div>
-                  <div class="text-xs text-slate-400 mt-1">PyTest Test Coverage</div>
+
+                <!-- AWS Shell Pane -->
+                <div id="pane-aws" class="terminal-pane hidden space-y-1.5 text-slate-300">
+                  <p><span class="text-slate-500"># Provisioning backend microservices on AWS</span></p>
+                  <p><span class="text-sky-400">$</span> aws ec2 run-instances --image-id ami-linux2 --instance-type t3.medium</p>
+                  <p><span class="text-sky-400">$</span> systemctl start gunicorn celery_worker redis</p>
+                  <p><span class="text-sky-400">$</span> pytest --cov=api --cov-report=term-missing</p>
+                  <p class="text-emerald-400">====== 42 passed in 1.42s (Coverage: 88.5%) ======</p>
                 </div>
-                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-purple-500/30 transition-all">
-                  <div class="text-2xl font-bold text-purple-400">98%+ <span class="text-xs font-normal text-slate-400">Acc</span></div>
-                  <div class="text-xs text-slate-400 mt-1">GenAI Document Parsing</div>
-                </div>
+
               </div>
 
-              <!-- Tech Highlights Stack -->
-              <div class="space-y-2">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Core Stack</div>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="tech-chip text-sky-400">Python</span>
-                  <span class="tech-chip text-sky-400">Django DRF</span>
-                  <span class="tech-chip text-sky-400">FastAPI</span>
-                  <span class="tech-chip text-sky-400">PostgreSQL</span>
-                  <span class="tech-chip text-sky-400">AWS (EC2/S3/RDS)</span>
-                  <span class="tech-chip text-sky-400">Celery & Redis</span>
-                  <span class="tech-chip text-sky-400">LangChain & Gemini</span>
-                  <span class="tech-chip text-sky-400">PyTest</span>
-                </div>
-              </div>
+              <!-- Simulated Output Console -->
+              <div id="terminal-output" class="hidden mt-4 pt-3 border-t border-slate-800/80 bg-slate-950/60 p-3 rounded-xl transition-all"></div>
 
             </div>
-
-            <!-- Decorative floating background elements -->
-            <div class="absolute -top-4 -right-4 w-24 h-24 bg-sky-500/20 rounded-full blur-xl pointer-events-none"></div>
-            <div class="absolute -bottom-4 -left-4 w-28 h-28 bg-indigo-500/20 rounded-full blur-xl pointer-events-none"></div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ABOUT ME & SUMMARY SECTION -->
-    <section id="about" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <!-- STATS COUNTER RIBBON -->
+    <section id="stats-section" class="py-12 border-y border-white/5 bg-slate-950/40 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">About Me</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Engineering Resilient & High-Performance Backends</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           
-          <!-- Card 1: Backend Architecture -->
-          <div class="glass-card p-8 rounded-2xl space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
-              ⚙️
+          <div class="p-6 spotlight-card">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold gradient-text-sky counter-value" data-target="1.5" data-suffix="+" data-decimals="1">
+              0
             </div>
-            <h3 class="text-xl font-bold text-white">Scalable Microservices</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Extensive experience designing robust RESTful APIs & asynchronous microservices using <strong>Django DRF</strong> and <strong>FastAPI</strong>. Dedicated to clean architecture, modularity, and high maintainability.
-            </p>
+            <div class="text-xs sm:text-sm text-slate-400 mt-2 font-medium">Years Backend Experience</div>
           </div>
 
-          <!-- Card 2: Database & Caching Optimization -->
-          <div class="glass-card p-8 rounded-2xl space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
-              ⚡
+          <div class="p-6 spotlight-card">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold gradient-text-emerald counter-value" data-target="35" data-suffix="%" data-decimals="0">
+              0
             </div>
-            <h3 class="text-xl font-bold text-white">Database & Queue Tuning</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Specialized in <strong>PostgreSQL</strong> optimization (eliminating N+1 queries with <code class="text-xs text-sky-300">select_related</code> / <code class="text-xs text-sky-300">prefetch_related</code>) and distributed background worker queues with <strong>Celery & Redis</strong>.
-            </p>
+            <div class="text-xs sm:text-sm text-slate-400 mt-2 font-medium">Query Latency Reduction</div>
           </div>
 
-          <!-- Card 3: Cloud & GenAI Integration -->
-          <div class="glass-card p-8 rounded-2xl space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
-              ☁️
+          <div class="p-6 spotlight-card">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-indigo-400 counter-value" data-target="85" data-suffix="%+" data-decimals="0">
+              0
             </div>
-            <h3 class="text-xl font-bold text-white">AWS Cloud & GenAI</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Hands-on with <strong>AWS (EC2 Linux, S3 storage, RDS, IAM least-privilege)</strong> and cutting-edge Generative AI workflows with <strong>LangChain</strong> and <strong>Google Gemini 1.5</strong> for unstructured data parsing.
-            </p>
+            <div class="text-xs sm:text-sm text-slate-400 mt-2 font-medium">PyTest Code Coverage</div>
+          </div>
+
+          <div class="p-6 spotlight-card">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold gradient-text-gold counter-value" data-target="98" data-suffix="%+" data-decimals="0">
+              0
+            </div>
+            <div class="text-xs sm:text-sm text-slate-400 mt-2 font-medium">GenAI Extraction Accuracy</div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS SECTION -->
-    <section id="skills" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 md:py-28 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Technical Arsenal</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Technologies</p>
-          <p class="text-slate-400 text-sm mt-3">Production-tested tools and frameworks used across my work experience and projects.</p>
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-3 font-mono">// CORE COMPETENCIES</h2>
+          <p class="text-3xl sm:text-4xl font-display font-extrabold text-white">Engineering Scalable Software Systems</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Card 1 -->
+          <div class="spotlight-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
+                ⚙️
+              </div>
+              <h3 class="text-lg font-bold text-white font-display">API & Microservices</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Architecting clean, modular RESTful APIs and asynchronous services using <strong>Django DRF</strong> and <strong>FastAPI</strong> with strict schema validation.
+              </p>
+            </div>
+            <div class="pt-2 text-xs text-sky-400 font-mono font-medium">Django • FastAPI • ASGI</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="spotlight-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
+                ⚡
+              </div>
+              <h3 class="text-lg font-bold text-white font-display">Database Tuning</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                PostgreSQL query profiling, eliminating N+1 bottleneck queries via ORM optimization, and caching with <strong>Redis pub/sub</strong>.
+              </p>
+            </div>
+            <div class="pt-2 text-xs text-indigo-400 font-mono font-medium">PostgreSQL • Redis • Indexing</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="spotlight-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
+                ☁️
+              </div>
+              <h3 class="text-lg font-bold text-white font-display">AWS Cloud Infra</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Configuring secure <strong>AWS EC2 Linux</strong> virtual machines, <strong>S3 asset storage</strong>, <strong>RDS</strong>, and enforcing <strong>IAM</strong> least-privilege security policies.
+              </p>
+            </div>
+            <div class="pt-2 text-xs text-emerald-400 font-mono font-medium">EC2 • S3 • RDS • IAM</div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="spotlight-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl">
+                🤖
+              </div>
+              <h3 class="text-lg font-bold text-white font-display">GenAI & Queues</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Asynchronous distributed task queues with <strong>Celery</strong> and Generative AI pipelines with <strong>LangChain & Gemini 1.5</strong> for unstructured data parsing.
+              </p>
+            </div>
+            <div class="pt-2 text-xs text-purple-400 font-mono font-medium">Celery • LangChain • Gemini</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="py-20 md:py-28 bg-slate-950/40 border-t border-white/5 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-3 font-mono">// ARSENAL</h2>
+          <p class="text-3xl sm:text-4xl font-display font-extrabold text-white">Technical Skills Matrix</p>
+          <p class="text-slate-400 text-sm mt-3">Production tools, frameworks, and technologies leveraged across my career.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- 1. Languages & Core -->
-          <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="spotlight-card p-6 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">🐍</span>
-              <h3 class="font-bold text-lg text-white">Languages & Fundamentals</h3>
+              <div class="p-2.5 rounded-xl bg-sky-500/10 text-sky-400">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.25 2.25c-.41 0-.75.34-.75.75v1.5c0 .41.34.75.75.75h1.5a.75.75 0 0 0 .75-.75V3a.75.75 0 0 0-.75-.75h-1.5zM6 6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V6z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white">Languages & Core</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="tech-chip text-sky-300">Python</span>
-              <span class="tech-chip">Data Structures & Algorithms</span>
-              <span class="tech-chip">Object-Oriented Programming (OOP)</span>
-              <span class="tech-chip">SQL</span>
-              <span class="tech-chip">JavaScript</span>
-              <span class="tech-chip">C Programming</span>
+              <span class="tech-tag text-sky-300 font-semibold">Python</span>
+              <span class="tech-tag">Data Structures & Algorithms</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">C Language</span>
             </div>
           </div>
 
           <!-- 2. Frameworks & Backend -->
-          <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="spotlight-card p-6 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">🛠️</span>
-              <h3 class="font-bold text-lg text-white">Frameworks & Backend</h3>
+              <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white">Frameworks & Backend</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="tech-chip text-sky-300 font-semibold">Django (WSGI/ASGI)</span>
-              <span class="tech-chip text-sky-300 font-semibold">Django REST Framework (DRF)</span>
-              <span class="tech-chip text-sky-300 font-semibold">FastAPI</span>
-              <span class="tech-chip">Celery (Worker Queues)</span>
-              <span class="tech-chip">Flask</span>
-              <span class="tech-chip">LangChain (GenAI)</span>
+              <span class="tech-tag text-sky-300 font-semibold">Django (WSGI/ASGI)</span>
+              <span class="tech-tag text-sky-300 font-semibold">Django REST Framework</span>
+              <span class="tech-tag text-sky-300 font-semibold">FastAPI</span>
+              <span class="tech-tag font-semibold text-purple-300">Celery Worker Queues</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">LangChain</span>
             </div>
           </div>
 
-          <!-- 3. Cloud & DevOps -->
-          <div class="glass-card p-6 rounded-2xl space-y-4">
+          <!-- 3. Cloud & Infrastructure -->
+          <div class="spotlight-card p-6 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">☁️</span>
-              <h3 class="font-bold text-lg text-white">Cloud & DevOps</h3>
+              <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white">Cloud & DevOps</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="tech-chip text-emerald-300 font-semibold">Amazon Web Services (AWS)</span>
-              <span class="tech-chip">AWS EC2 (Linux)</span>
-              <span class="tech-chip">AWS S3 (Object Storage)</span>
-              <span class="tech-chip">AWS RDS</span>
-              <span class="tech-chip">AWS IAM & Security Groups</span>
-              <span class="tech-chip">Docker</span>
-              <span class="tech-chip">Linux / Bash Scripting</span>
+              <span class="tech-tag text-emerald-300 font-semibold">Amazon Web Services (AWS)</span>
+              <span class="tech-tag">AWS EC2 (Linux)</span>
+              <span class="tech-tag">AWS S3</span>
+              <span class="tech-tag">AWS RDS</span>
+              <span class="tech-tag">AWS IAM & Security Groups</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Linux / Bash Scripting</span>
             </div>
           </div>
 
           <!-- 4. Databases & Caching -->
-          <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="spotlight-card p-6 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">🗄️</span>
-              <h3 class="font-bold text-lg text-white">Databases & Caching</h3>
+              <div class="p-2.5 rounded-xl bg-sky-500/10 text-sky-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white">Databases & Caching</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="tech-chip text-sky-300 font-semibold">PostgreSQL (Query Optimization)</span>
-              <span class="tech-chip">Redis (Pub/Sub & Cache)</span>
-              <span class="tech-chip">MySQL</span>
-              <span class="tech-chip">MongoDB</span>
-              <span class="tech-chip">ORM Query Indexing</span>
+              <span class="tech-tag text-sky-300 font-semibold">PostgreSQL (Query Optimization)</span>
+              <span class="tech-tag text-sky-300 font-semibold">Redis (Pub/Sub & Caching)</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">ORM Query Indexing</span>
             </div>
           </div>
 
           <!-- 5. APIs & Architecture -->
-          <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="spotlight-card p-6 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">🔗</span>
-              <h3 class="font-bold text-lg text-white">APIs & Protocols</h3>
+              <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white">APIs & Architecture</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="tech-chip">RESTful APIs</span>
-              <span class="tech-chip text-sky-300">WebSockets (Real-time)</span>
-              <span class="tech-chip">JWT & OAuth2 Auth</span>
-              <span class="tech-chip">Swagger / OpenAPI</span>
-              <span class="tech-chip">Third-Party Integrations</span>
-              <span class="tech-chip">Microservices Architecture</span>
+              <span class="tech-tag font-semibold">RESTful APIs</span>
+              <span class="tech-tag text-sky-300 font-semibold">WebSockets (Real-time)</span>
+              <span class="tech-tag">JWT & OAuth2</span>
+              <span class="tech-tag">OpenAPI / Swagger</span>
+              <span class="tech-tag">Microservices Pattern</span>
             </div>
           </div>
 
           <!-- 6. Testing & Tools -->
-          <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="spotlight-card p-6 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">🧪</span>
-              <h3 class="font-bold text-lg text-white">Testing & Productivity</h3>
+              <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white">Testing & Productivity</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="tech-chip text-indigo-300 font-semibold">PyTest (Automated Testing)</span>
-              <span class="tech-chip">unittest</span>
-              <span class="tech-chip">Git & GitHub</span>
-              <span class="tech-chip">Agile / Scrum</span>
-              <span class="tech-chip">Code Reviews</span>
-              <span class="tech-chip">GitHub Copilot / Cursor</span>
+              <span class="tech-tag text-amber-300 font-semibold">PyTest (Automated Testing)</span>
+              <span class="tech-tag">unittest</span>
+              <span class="tech-tag">Git & GitHub</span>
+              <span class="tech-tag">Agile / Scrum</span>
+              <span class="tech-tag">Code Reviews</span>
+              <span class="tech-tag">Copilot / Cursor</span>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
     <!-- WORK EXPERIENCE TIMELINE -->
-    <section id="experience" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <section id="experience" class="py-20 md:py-28 relative">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Career Journey</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</p>
-          <p class="text-slate-400 text-sm mt-3">Track record of delivering production backend systems, database optimizations, and machine learning models.</p>
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-3 font-mono">// EXPERIENCE</h2>
+          <p class="text-3xl sm:text-4xl font-display font-extrabold text-white">Work Experience & Milestones</p>
         </div>
 
-        <div class="relative pl-8 sm:pl-10 border-l-2 border-slate-800 space-y-12">
+        <div class="relative pl-8 sm:pl-10 border-l-2 border-sky-500/30 space-y-12">
 
-          <!-- 1. Full-Time Software Developer -->
-          <div class="timeline-item relative">
-            <div class="glass-card p-6 sm:p-8 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+          <!-- Role 1 -->
+          <div class="timeline-dot relative">
+            <div class="spotlight-card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
                 <div>
-                  <h3 class="text-xl font-bold text-white">Software Developer</h3>
+                  <h3 class="text-xl font-display font-bold text-white">Software Developer</h3>
                   <p class="text-sm font-semibold text-sky-400">Edso Services Pvt. Ltd. (PeopleNexusAI)</p>
                 </div>
                 <div class="text-left sm:text-right">
-                  <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/30">
                     Jul 2025 – Present
                   </span>
                   <p class="text-xs text-slate-400 mt-1">Pune, India</p>
                 </div>
               </div>
 
-              <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+              <ul class="space-y-3 text-sm text-slate-300 leading-relaxed list-disc list-inside">
                 <li>Designed and deployed scalable backend microservices and REST APIs using <strong class="text-white">Django DRF</strong> and <strong class="text-white">FastAPI</strong>.</li>
                 <li>Optimized PostgreSQL data-access layers via Django ORM (<code class="text-xs text-sky-300">select_related</code>, <code class="text-xs text-sky-300">prefetch_related</code>), eliminating N+1 queries and reducing database latency by <strong class="text-emerald-400">35%</strong>.</li>
                 <li>Architected distributed background worker pipelines using <strong class="text-white">Celery & Redis</strong>, integrating <strong class="text-white">LangChain & Gemini 1.5</strong> for automated dataset extraction.</li>
@@ -426,12 +511,12 @@
             </div>
           </div>
 
-          <!-- 2. Software Developer Intern -->
-          <div class="timeline-item relative">
-            <div class="glass-card p-6 sm:p-8 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+          <!-- Role 2 -->
+          <div class="timeline-dot relative">
+            <div class="spotlight-card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
                 <div>
-                  <h3 class="text-xl font-bold text-white">Software Developer Intern</h3>
+                  <h3 class="text-xl font-display font-bold text-white">Software Developer Intern</h3>
                   <p class="text-sm font-semibold text-sky-400">Edso Services Pvt. Ltd. (PeopleNexusAI)</p>
                 </div>
                 <div class="text-left sm:text-right">
@@ -442,20 +527,20 @@
                 </div>
               </div>
 
-              <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+              <ul class="space-y-3 text-sm text-slate-300 leading-relaxed list-disc list-inside">
                 <li>Developed RESTful API endpoints and database migrations using <strong class="text-white">Django & DRF</strong> under senior engineer mentorship.</li>
-                <li>Optimized database interactions and resolved API performance bottlenecks, adhering to strict production code conventions.</li>
-                <li>Authored unit test cases and actively participated in daily agile sprint reviews, resulting in a full-time Software Developer job offer.</li>
+                <li>Optimized database interactions and resolved API bottlenecks, adhering to production code standards.</li>
+                <li>Authored unit test cases and participated in daily agile sprints, resulting in a full-time Software Developer offer.</li>
               </ul>
             </div>
           </div>
 
-          <!-- 3. Data Science / ML Intern -->
-          <div class="timeline-item relative">
-            <div class="glass-card p-6 sm:p-8 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+          <!-- Role 3 -->
+          <div class="timeline-dot relative">
+            <div class="spotlight-card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
                 <div>
-                  <h3 class="text-xl font-bold text-white">Data Science Intern</h3>
+                  <h3 class="text-xl font-display font-bold text-white">Data Science Intern</h3>
                   <p class="text-sm font-semibold text-sky-400">Ai Variant</p>
                 </div>
                 <div class="text-left sm:text-right">
@@ -466,10 +551,10 @@
                 </div>
               </div>
 
-              <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
-                <li>Built and evaluated a Bankruptcy Prediction ML classification model achieving <strong class="text-emerald-400">95% accuracy</strong> and reducing prediction error by <strong class="text-emerald-400">20%</strong>.</li>
-                <li>Streamlined data preprocessing and feature engineering pipelines using <strong class="text-white">Pandas & NumPy</strong>, cutting pipeline runtime by <strong class="text-emerald-400">40%</strong>.</li>
-                <li>Delivered interactive data visualization dashboards and actionable risk-mitigation insights to cross-functional stakeholders.</li>
+              <ul class="space-y-3 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+                <li>Built and evaluated a Bankruptcy Prediction ML model achieving <strong class="text-emerald-400">95% accuracy</strong> and reducing prediction error by <strong class="text-emerald-400">20%</strong>.</li>
+                <li>Streamlined preprocessing pipelines with <strong class="text-white">Pandas & NumPy</strong>, cutting runtime by <strong class="text-emerald-400">40%</strong>.</li>
+                <li>Delivered data dashboards and risk-mitigation insights to cross-functional stakeholders.</li>
               </ul>
             </div>
           </div>
@@ -479,40 +564,56 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS SECTION -->
-    <section id="projects" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <!-- FEATURED PROJECTS SHOWCASE -->
+    <section id="projects" class="py-20 md:py-28 bg-slate-950/40 border-t border-white/5 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Featured Work</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Key Projects & Applications</p>
-          <p class="text-slate-400 text-sm mt-3">A selection of backend systems, asynchronous pipelines, and AI platforms.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-3 font-mono">// PORTFOLIO</h2>
+          <p class="text-3xl sm:text-4xl font-display font-extrabold text-white">Featured Projects</p>
+          <p class="text-slate-400 text-sm mt-3">High-impact backend applications, microservices, and distributed systems.</p>
         </div>
 
+        <!-- Filter Tab Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-white shadow-lg shadow-sky-500/25 transition-all" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold spotlight-card text-slate-300 transition-all" data-filter="backend">
+            Backend & APIs
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold spotlight-card text-slate-300 transition-all" data-filter="genai">
+            GenAI & LLMs
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold spotlight-card text-slate-300 transition-all" data-filter="cloud">
+            Cloud & Queues
+          </button>
+        </div>
+
+        <!-- Project Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- Project 1: Async AI Document Parser -->
-          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <!-- Project 1 -->
+          <div class="project-card spotlight-card p-6 flex flex-col justify-between space-y-5" data-category="genai backend">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-3xl">📄</span>
                 <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20">GenAI Microservice</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">Async AI Document Parser</h3>
+              <h3 class="text-xl font-display font-bold text-white mb-2">Async AI Document Parser</h3>
               <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Asynchronous document parsing microservice integrating <strong>FastAPI</strong>, <strong>LangChain</strong>, and <strong>Google Gemini 1.5</strong>. Automates entity extraction to transform unstructured business files into structured JSON schemas with <strong class="text-purple-400">98%+ accuracy</strong>.
+                Asynchronous document parsing microservice using <strong>FastAPI, LangChain, and Gemini 1.5</strong>. Converts unstructured business documents into structured JSON schemas with <strong class="text-purple-400">98%+ accuracy</strong>.
               </p>
             </div>
 
             <div>
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="tech-chip">FastAPI</span>
-                <span class="tech-chip">LangChain</span>
-                <span class="tech-chip">Gemini 1.5</span>
-                <span class="tech-chip">Python</span>
-                <span class="tech-chip">JSON Schema</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">Gemini 1.5</span>
+                <span class="tech-tag">Python</span>
               </div>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+              <div class="flex items-center justify-between pt-4 border-t border-white/10">
                 <a href="https://github.com/Rushi-code1/async-document-parser" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   <span>GitHub Repository</span>
@@ -521,28 +622,27 @@
             </div>
           </div>
 
-          <!-- Project 2: WebSocket Real-Time Messaging -->
-          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <!-- Project 2 -->
+          <div class="project-card spotlight-card p-6 flex flex-col justify-between space-y-5" data-category="backend">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-3xl">💬</span>
                 <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20">Real-Time Messaging</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">WebSocket Messaging Engine</h3>
+              <h3 class="text-xl font-display font-bold text-white mb-2">WebSocket Messaging Engine</h3>
               <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Engineered full-stack real-time messaging layer with secure Django REST APIs and React, backed by Redis pub/sub. Achieved <strong class="text-sky-400">sub-50ms latency</strong> and a <strong class="text-sky-400">95% drop reduction</strong>, validated with PyTest.
+                Full-stack real-time messaging layer with secure Django REST APIs and React, backed by Redis pub/sub. Achieved <strong class="text-sky-400">sub-50ms latency</strong> and <strong class="text-sky-400">95% drop reduction</strong>.
               </p>
             </div>
 
             <div>
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="tech-chip">Django DRF</span>
-                <span class="tech-chip">WebSockets</span>
-                <span class="tech-chip">React</span>
-                <span class="tech-chip">Redis</span>
-                <span class="tech-chip">PyTest</span>
+                <span class="tech-tag">Django DRF</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">PyTest</span>
               </div>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+              <div class="flex items-center justify-between pt-4 border-t border-white/10">
                 <a href="https://github.com/Rushi-code1/realtime-chat-app" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   <span>GitHub Repository</span>
@@ -551,28 +651,27 @@
             </div>
           </div>
 
-          <!-- Project 3: Background Task Processor -->
-          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <!-- Project 3 -->
+          <div class="project-card spotlight-card p-6 flex flex-col justify-between space-y-5" data-category="cloud backend">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-3xl">⚙️</span>
                 <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">Async Task Pipeline</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">Scalable Background Task Processor</h3>
+              <h3 class="text-xl font-display font-bold text-white mb-2">Scalable Background Task Processor</h3>
               <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Asynchronous worker pipeline integrating Gmail API via REST, offloading blocking I/O to improve response times by <strong class="text-amber-400">45%</strong>. Features task prioritization, dead-letter retries, and AWS EC2 deployment.
+                Asynchronous worker pipeline integrating Gmail API via REST, offloading blocking I/O to improve response times by <strong class="text-amber-400">45%</strong>. Hosted on AWS EC2.
               </p>
             </div>
 
             <div>
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="tech-chip">Django DRF</span>
-                <span class="tech-chip">Celery</span>
-                <span class="tech-chip">Redis</span>
-                <span class="tech-chip">Gmail API</span>
-                <span class="tech-chip">AWS EC2</span>
+                <span class="tech-tag">Django DRF</span>
+                <span class="tech-tag">Celery</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">AWS EC2</span>
               </div>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+              <div class="flex items-center justify-between pt-4 border-t border-white/10">
                 <a href="https://github.com/Rushi-code1/email-sending-app" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   <span>GitHub Repository</span>
@@ -581,28 +680,27 @@
             </div>
           </div>
 
-          <!-- Project 4: Bankruptcy Prediction & Automated EDA -->
-          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <!-- Project 4 -->
+          <div class="project-card spotlight-card p-6 flex flex-col justify-between space-y-5" data-category="genai">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-3xl">📊</span>
                 <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Machine Learning</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">Bankruptcy ML & Automated EDA</h3>
+              <h3 class="text-xl font-display font-bold text-white mb-2">Bankruptcy ML & Automated EDA</h3>
               <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Automated dataset profiling, exploratory analysis, and classification system built with <strong>Python, Scikit-learn, and Streamlit</strong>. Delivers statistical correlation models and <strong class="text-emerald-400">95% prediction accuracy</strong>.
+                Predictive risk classification and automated EDA engine built with <strong>Python, Scikit-learn, and Streamlit</strong> delivering <strong class="text-emerald-400">95% accuracy</strong>.
               </p>
             </div>
 
             <div>
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="tech-chip">Python</span>
-                <span class="tech-chip">Scikit-learn</span>
-                <span class="tech-chip">Streamlit</span>
-                <span class="tech-chip">Pandas & NumPy</span>
-                <span class="tech-chip">EDA</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">Pandas</span>
               </div>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+              <div class="flex items-center justify-between pt-4 border-t border-white/10">
                 <a href="https://github.com/Rushi-code1/Bankruptcy-Prediction" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   <span>GitHub Repository</span>
@@ -611,28 +709,27 @@
             </div>
           </div>
 
-          <!-- Project 5: AI-Powered Chatbot Generator -->
-          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <!-- Project 5 -->
+          <div class="project-card spotlight-card p-6 flex flex-col justify-between space-y-5" data-category="backend genai">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-3xl">🤖</span>
-                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">NLP & Web Platform</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">NLP Platform</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">AI Chatbot Generator</h3>
+              <h3 class="text-xl font-display font-bold text-white mb-2">AI Chatbot Generator</h3>
               <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Custom conversational agent generator powered by natural language processing and machine learning algorithms for human-like interactive dialogues and multi-platform deployment.
+                Platform for generating NLP-driven conversational chatbots tailored for various domains with seamless web integration.
               </p>
             </div>
 
             <div>
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="tech-chip">Python</span>
-                <span class="tech-chip">Flask</span>
-                <span class="tech-chip">NLP</span>
-                <span class="tech-chip">ChatterBot</span>
-                <span class="tech-chip">Machine Learning</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">ChatterBot</span>
+                <span class="tech-tag">NLP</span>
               </div>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+              <div class="flex items-center justify-between pt-4 border-t border-white/10">
                 <a href="https://github.com/Rushi-code1/AI-Powered-Chatbot-Generator" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   <span>GitHub Repository</span>
@@ -641,28 +738,26 @@
             </div>
           </div>
 
-          <!-- Project 6: Anime Recommendation System -->
-          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <!-- Project 6 -->
+          <div class="project-card spotlight-card p-6 flex flex-col justify-between space-y-5" data-category="genai">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-3xl">🎬</span>
                 <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-teal-500/10 text-teal-400 border border-teal-500/20">Recommender System</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">Anime Recommendation Engine</h3>
+              <h3 class="text-xl font-display font-bold text-white mb-2">Anime Recommendation Engine</h3>
               <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Content-based personalized anime recommendation application built with <strong>Streamlit, Pandas, and Scikit-Learn</strong>. Features genre similarity filtering and live dataset exploration.
+                Personalized recommendation web app built with <strong>Streamlit and Scikit-learn</strong> based on cosine similarity and genre clustering.
               </p>
             </div>
 
             <div>
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="tech-chip">Python</span>
-                <span class="tech-chip">Streamlit</span>
-                <span class="tech-chip">Scikit-Learn</span>
-                <span class="tech-chip">Pandas</span>
-                <span class="tech-chip">Cosine Similarity</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">Pandas</span>
               </div>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+              <div class="flex items-center justify-between pt-4 border-t border-white/10">
                 <a href="https://github.com/Rushi-code1/Anime-Recommendation-System" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   <span>GitHub Repository</span>
@@ -676,55 +771,55 @@
       </div>
     </section>
 
-    <!-- EDUCATION & CERTIFICATIONS SECTION -->
-    <section id="education" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="py-20 md:py-28 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Qualifications</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Education & Certifications</p>
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-3 font-mono">// ACADEMICS & CREDENTIALS</h2>
+          <p class="text-3xl sm:text-4xl font-display font-extrabold text-white">Education & Certifications</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           <!-- Education Card -->
-          <div class="glass-card p-8 rounded-2xl space-y-6">
+          <div class="spotlight-card p-8 space-y-6">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
+              <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
                 🎓
               </div>
               <div>
-                <h3 class="text-xl font-bold text-white">Bachelor of Engineering (B.E.)</h3>
+                <h3 class="text-xl font-display font-bold text-white">Bachelor of Engineering (B.E.)</h3>
                 <p class="text-sm font-semibold text-sky-400">Computer Science and Engineering</p>
               </div>
             </div>
 
-            <div class="space-y-3 pt-2">
+            <div class="space-y-4 pt-2">
               <div class="flex items-center justify-between text-sm">
-                <span class="text-slate-300">SSBT College of Engineering & Technology, Jalgaon</span>
+                <span class="text-slate-300 font-medium">SSBT College of Engineering & Technology, Jalgaon</span>
                 <span class="text-xs font-mono text-slate-400">2020 – 2024</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-between">
                 <span class="text-xs text-slate-400 font-medium">Cumulative Grade Point Average</span>
-                <span class="text-base font-bold text-emerald-400 font-mono">CGPA: 8.91 / 10</span>
+                <span class="text-lg font-bold text-emerald-400 font-mono">CGPA: 8.91 / 10</span>
               </div>
             </div>
           </div>
 
           <!-- Certifications Card -->
-          <div class="glass-card p-8 rounded-2xl space-y-6">
+          <div class="spotlight-card p-8 space-y-6">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
                 📜
               </div>
               <div>
-                <h3 class="text-xl font-bold text-white">Professional Certifications</h3>
-                <p class="text-sm font-semibold text-indigo-400">Verified Credentials</p>
+                <h3 class="text-xl font-display font-bold text-white">Professional Certifications</h3>
+                <p class="text-sm font-semibold text-indigo-400">Industry Recognized</p>
               </div>
             </div>
 
             <div class="space-y-3">
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-between">
                 <div>
                   <h4 class="text-sm font-semibold text-white">Data Science Certificate (KNIME)</h4>
                   <p class="text-xs text-slate-400">ExcelR Solutions</p>
@@ -732,7 +827,7 @@
                 <span class="text-xs font-mono text-slate-400">2024</span>
               </div>
 
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-between">
                 <div>
                   <h4 class="text-sm font-semibold text-white">Deep Learning Specialization</h4>
                   <p class="text-xs text-slate-400">Coursera (DeepLearning.AI)</p>
@@ -740,7 +835,7 @@
                 <span class="text-xs font-mono text-slate-400">2024</span>
               </div>
 
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-between">
                 <div>
                   <h4 class="text-sm font-semibold text-white">Programming in C</h4>
                   <p class="text-xs text-slate-400">NPTEL (IIT Kharagpur)</p>
@@ -755,67 +850,53 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <!-- CONTACT & CONNECT SECTION -->
+    <section id="contact" class="py-20 md:py-28 bg-slate-950/40 border-t border-white/5 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Let's Connect</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Get in Touch</p>
-          <p class="text-slate-400 text-sm mt-3">Interested in collaborating or discussing software development opportunities? Reach out!</p>
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-3 font-mono">// GET IN TOUCH</h2>
+          <p class="text-3xl sm:text-4xl font-display font-extrabold text-white">Let's Build Something Great</p>
+          <p class="text-slate-400 text-sm mt-3">Ready to contribute to high-impact backend systems. Feel free to connect!</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
-          <!-- Contact Info Cards (Left) -->
+          <!-- Contact Info Cards -->
           <div class="lg:col-span-5 space-y-4">
             
-            <!-- Email Item -->
-            <div class="glass-card p-5 rounded-2xl flex items-center justify-between">
+            <div class="spotlight-card p-5 flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+                <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </div>
                 <div>
-                  <div class="text-xs text-slate-400 font-medium">Email Address</div>
+                  <div class="text-xs text-slate-400 font-medium">Direct Email</div>
                   <a href="mailto:rushikesh.deshmukh1103@gmail.com" class="text-sm font-semibold text-white hover:text-sky-400 transition-colors">rushikesh.deshmukh1103@gmail.com</a>
                 </div>
               </div>
-              <button onclick="copyEmail()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" title="Copy Email">
+              <button onclick="copyEmail()" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" title="Copy Email">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
               </button>
             </div>
 
-            <!-- Phone / WhatsApp Item -->
-            <div class="glass-card p-5 rounded-2xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <div class="spotlight-card p-5 flex items-center gap-4">
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
               </div>
               <div>
-                <div class="text-xs text-slate-400 font-medium">Phone & WhatsApp</div>
+                <div class="text-xs text-slate-400 font-medium">WhatsApp / Call</div>
                 <a href="https://wa.me/918468970166" target="_blank" class="text-sm font-semibold text-white hover:text-emerald-400 transition-colors">+91 8468970166</a>
               </div>
             </div>
 
-            <!-- Location Item -->
-            <div class="glass-card p-5 rounded-2xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
-              <div>
-                <div class="text-xs text-slate-400 font-medium">Location</div>
-                <span class="text-sm font-semibold text-white">Pune, Maharashtra, India</span>
-              </div>
-            </div>
-
-            <!-- LinkedIn Card -->
-            <div class="glass-card p-5 rounded-2xl flex items-center justify-between">
+            <div class="spotlight-card p-5 flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </div>
                 <div>
-                  <div class="text-xs text-slate-400 font-medium">LinkedIn</div>
+                  <div class="text-xs text-slate-400 font-medium">LinkedIn Network</div>
                   <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="text-sm font-semibold text-sky-400 hover:underline">rd-rushikesh-deshmukh</a>
                 </div>
               </div>
@@ -824,34 +905,44 @@
               </a>
             </div>
 
+            <div class="spotlight-card p-5 flex items-center gap-4">
+              <div class="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">Location</div>
+                <span class="text-sm font-semibold text-white">Pune, Maharashtra, India</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Contact Form (Right) -->
+          <!-- Interactive Contact Form -->
           <div class="lg:col-span-7">
-            <form id="contact-form" class="glass-card p-8 rounded-3xl space-y-5">
-              <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+            <form id="contact-form" class="spotlight-card p-8 space-y-5">
+              <h3 class="text-xl font-display font-bold text-white mb-2">Send an Instant Message</h3>
               
               <div>
-                <label for="form-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
-                <input type="text" id="form-name" required placeholder="e.g. Alex Johnson"
-                       class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
+                <label for="form-name" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
+                <input type="text" id="form-name" required placeholder="John Doe"
+                       class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
               </div>
 
               <div>
-                <label for="form-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
-                <input type="email" id="form-email" required placeholder="e.g. alex@example.com"
-                       class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
+                <label for="form-email" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">Your Email</label>
+                <input type="email" id="form-email" required placeholder="john@example.com"
+                       class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
               </div>
 
               <div>
-                <label for="form-message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
-                <textarea id="form-message" rows="4" required placeholder="Write your message or inquiry here..."
-                          class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all"></textarea>
+                <label for="form-message" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">Message</label>
+                <textarea id="form-message" rows="4" required placeholder="Describe your project, role, or inquiry..."
+                          class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all"></textarea>
               </div>
 
               <button type="submit"
-                      class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                <span>Send Message</span>
+                      class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                <span>Send Inquiry</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </button>
             </form>
@@ -864,10 +955,60 @@
 
   </main>
 
+  <!-- INTERACTIVE ABOUT ME MODAL -->
+  <div id="about-modal" class="modal-overlay p-4">
+    <div class="modal-content spotlight-card max-w-2xl w-full p-8 rounded-3xl relative border-sky-500/30">
+      
+      <button id="close-modal-btn" class="absolute top-6 right-6 p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-400 to-indigo-600 flex items-center justify-center text-2xl shadow-xl shadow-sky-500/30">
+          👨‍💻
+        </div>
+        <div>
+          <h3 class="text-2xl font-display font-bold text-white">Rushikesh Deshmukh</h3>
+          <p class="text-sm text-sky-400 font-mono">Backend Software Developer</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-slate-300 text-sm leading-relaxed mb-6">
+        <p>
+          I am a passionate <strong>Backend Software Developer</strong> with 1.5+ years of production experience designing robust architectures in <strong>Python, Django DRF, FastAPI, PostgreSQL</strong>, and <strong>AWS Cloud Infrastructure</strong>.
+        </p>
+        <p>
+          At <strong>Edso Services (PeopleNexusAI)</strong>, I have spearheaded microservices development, reduced PostgreSQL query response latency by 35%, and established automated CI/CD testing pipelines with PyTest (85%+ coverage).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-6 font-mono text-xs">
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-white/10">
+          <span class="text-slate-500">Location:</span>
+          <p class="text-white font-semibold">Pune, Maharashtra</p>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-white/10">
+          <span class="text-slate-500">Education:</span>
+          <p class="text-white font-semibold">B.E. Computer Science (8.91 CGPA)</p>
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf" class="flex-1 py-3 text-center rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-all">
+          Download PDF Resume
+        </a>
+        <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="py-3 px-5 rounded-xl border border-sky-500/30 text-sky-400 hover:bg-sky-500/10 font-semibold text-xs transition-all">
+          LinkedIn Profile ↗
+        </a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- FOOTER -->
-  <footer class="py-10 border-t border-slate-800/80 text-center text-xs text-slate-500">
+  <footer class="py-12 border-t border-white/10 text-center text-xs text-slate-500 relative z-10">
     <div class="max-w-7xl mx-auto px-4 space-y-4">
-      <div class="flex items-center justify-center gap-6 text-slate-400">
+      <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400">
         <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
         <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
@@ -875,7 +1016,7 @@
         <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" class="hover:text-sky-400 transition-colors">Resume</a>
         <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
       </div>
-      <p>© 2026 Rushikesh Deshmukh. Built with precision, performance & modern web standards.</p>
+      <p>© 2026 Rushikesh Deshmukh • Designed & Built with Precision & Performance.</p>
     </div>
   </footer>
 
