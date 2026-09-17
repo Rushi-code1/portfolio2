@@ -1,154 +1,170 @@
-#wrapper-canvas canvas {
-    max-width: 100%;
-}
-.popup {
-    position: fixed;
-    width: 28%;
-    height: 65%;
-    top: 50%;
-    left: 78%;
-    transform: translate(-50%, -50%);
-    background: none;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-     align-items: center;
-}
-#animated-text {
-    font-size: 1.5rem;
-    background-color: #5a5858;
-    color: #ffffff;
-}
-.square {
-    width: 100%;
-    height: 100%;
-    animation: pop 0.5s forwards;
+﻿/* Modern Portfolio Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-primary: #0a0f1d;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(56, 189, 248, 0.35);
+  --accent-cyan: #38bdf8;
+  --accent-blue: #3b82f6;
+  --accent-indigo: #6366f1;
+  --accent-emerald: #10b981;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
 }
 
-.glow{
-    box-shadow: 0px 4px 20px rgba(92, 32, 220, 0.854);
-}
-
-@keyframes pop {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    text-align: center;
-}
-
-#aboutMe h2 {
-    color: #333;
-    font-size: 24px;
-}
-
-#aboutMe p, #aboutMe ul {
-    text-align: left;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-
-
-a:hover {
-    text-decoration: underline;
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-.cen{
-    text-align: center;
-
+code, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.bob{
-    text-align: end;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
-#close{
-    color: white;
-    border: none;
-    margin-top: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
-    text-align: end;
+::-webkit-scrollbar-track {
+  background: #0a0f1d;
 }
-
-.popup-container {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
 
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    text-align: center;
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#aboutMe h2 {
-    color: #9f3838;
-    font-size: 24px;
+.glass-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
 }
 
-#aboutMe p, #aboutMe ul {
-    text-align: left;
+.glass-nav {
+  background: rgba(10, 15, 29, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Radiant Gradients */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-ul li {
-    margin: 10px 0;
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #34d399 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-a:hover {
-    text-decoration: underline;
+.glow-bg {
+  position: absolute;
+  filter: blur(90px);
+  opacity: 0.25;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
+/* Timeline specific styling */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0a0f1d;
+  border: 3px solid #38bdf8;
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
+.timeline-item:hover::before {
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+  transform: scale(1.2);
+}
+
+/* Badges & Chips */
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.tech-chip:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Toast notifications */
+#toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
