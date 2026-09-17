@@ -1,625 +1,885 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="font.css" />
-  <link rel="stylesheet" href="output.css" />
+  <title>Rushikesh Deshmukh | Backend Software Developer</title>
+  <meta name="description" content="Portfolio of Rushikesh Deshmukh - Backend Software Developer specializing in Python, Django DRF, FastAPI, PostgreSQL, AWS Cloud, and GenAI." />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-white.svg" />
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Demo styles -->
-  <style>
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #1788ae;
-    }
-
-    .swiper-pagination-bullet {
-      background-color: #23b9eb;
-    }
-  </style>
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-  <script src="./matter.js" defer></script>
 </head>
+<body class="bg-[#0a0f1d] text-slate-100 antialiased relative min-h-screen selection:bg-sky-500 selection:text-white">
 
-<body class="bg-[#111] text-white font-['Nunito']">
-  <section class="flex flex-col justify-between h-screen">
-    <header class="z-10 pointer-events-none flex items-center justify-between w-full px-4 mt-4 max-w-screen-xl mx-auto">
-      <img src="assets/icons/logo-white.svg" alt="" width="40px">
-      <div class="flex gap-4 pointer-events-auto">
-        <a style="color:#4CAF50 ;" href="#Let's Connect" class="text-lg">ContactUS</a>
+  <!-- Glow Background Accents -->
+  <div class="glow-bg bg-sky-600 w-[450px] h-[450px] top-10 left-1/4"></div>
+  <div class="glow-bg bg-indigo-600 w-[400px] h-[400px] top-96 right-10"></div>
+  <div class="glow-bg bg-emerald-600 w-[350px] h-[350px] bottom-40 left-10"></div>
 
-        <a style="color:#4CAF50 ;" href="tel:9824989238"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" class="feather feather-phone">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-            </path>
-          </svg></a>
-        <a style="color:#4CAF50 ;" href="https://wa.me/9824989238?text=Hi, How are you?" target="_blank">
-          <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp"
-            class="svg-inline--fa fa-whatsapp fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" width="24"
-            height="24" viewBox="0 0 404 368">
-            <path fill="currentColor"
-              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-            </path>
+  <!-- NAVIGATION BAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center p-2 shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-bold text-lg tracking-tight text-white group-hover:text-sky-400 transition-colors">Rushikesh<span class="text-sky-400">.dev</span></span>
+            <span class="hidden sm:block text-[11px] text-slate-400 font-mono">Backend Developer</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <a href="#about" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">About</a>
+          <a href="#skills" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Skills</a>
+          <a href="#experience" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Experience</a>
+          <a href="#projects" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Projects</a>
+          <a href="#education" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Education</a>
+          <a href="#contact" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Contact</a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf"
+             class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 rounded-lg shadow-md shadow-sky-500/25 transition-all duration-200 hover:shadow-sky-500/40 hover:-translate-y-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Resume PDF
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-slate-800/80 px-4 pt-3 pb-5 space-y-2">
+      <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
+      <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">Skills</a>
+      <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400">Experience</a>
+      <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">Projects</a>
+      <a href="#education" class="block py-2 text-slate-300 hover:text-sky-400">Education</a>
+      <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">Contact</a>
+      <div class="pt-2">
+        <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf"
+           class="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold text-white bg-sky-500 rounded-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download Resume PDF
         </a>
       </div>
-    </header>
-    <div class="absolute inset-0 hidden md:block" id="wrapper-canvas"></div>
-    <div class="flex -mt-9 relative">
-      <div class="w-full px-5 max-w-screen-xl mx-auto">
-        <svg style="margin-top: -110px; margin-left:28%;" viewBox="0 0 604 368" fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="pointer-events-none absolute marging40 translate-x-1/2 w-[850px] sm:w-[600px] md:w-[700px]">
-          <path fill="#4CAF50" class="py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#4CAF50]"
-            d="M53.2 145.1l81.9-71.7h-34.3L19 145.1l102.8 90h34.3l-102.9-90" />
-          <g fill="#4CAF50">
-            <path
-              d="M145.3 145.1l36-31.6s.8-.7 1.1-1l2.4-2.4c8.5-10.3 13.3-23.3 13.3-36.7 0-31.8-25.8-57.7-57.6-57.7l-111.1.1L7.2 38.6l111.4-.1h21.9c19.2 0 34.8 15.6 34.8 34.8 0 8.2-2.7 15.8-8 22.2-1 1.3-8.3 7.3-8.3 7.3l-12.4 10.6-35.6 31.7 102.9 90h34.3l-102.9-90zm33.4-31.7h.2-.2z" />
-            <path
-              d="M252.8 236.9h-39.6l-.5-.4-104.4-91.3 37.1-33 12.5-10.6c3.5-2.9 7.5-6.3 8.1-7 5-6 7.6-13.3 7.6-21.1 0-18.2-14.8-33.1-33.1-33.1H3L28.6 14h115.8l-.1.1c31 2 55.6 27.8 55.6 59.3 0 13.6-4.9 27.1-13.7 37.8-.5.6-2.2 2.3-2.6 2.6-.3.3-1.2 1-1.2 1l-.5.4-34 29.8 104.9 91.9zm-38.3-3.5h29l-100.9-88.3 34.1-29.9h-2.2l3.6-3.5h1v1.5l1.6-1.4c.2-.2.4-.4.6-.5.4-.3 1.9-1.9 2.2-2.2 8.3-10.1 12.9-22.8 12.9-35.6 0-30.8-25.1-55.9-55.9-55.9h-3.9l-106.5-.1-18.8 19.4 109-.1h20.1c20.2 0 36.6 16.4 36.6 36.6 0 8.6-2.9 16.6-8.4 23.3-1 1.3-7.3 6.5-8.5 7.5l-12.4 10.6-34.1 30.3 100.9 88.3z" />
-            <path
-              d="M249.3 235.5h-35.5l-.1-.1-103.2-90.3.3-.3 35.6-31.7 12.4-10.6c2.5-2.1 7.5-6.2 8.3-7.2 5.1-6.2 7.9-13.8 7.9-21.9 0-19-15.4-34.4-34.4-34.4H6.2l23-23.7h.2l112.1-.1c31.6.5 57.1 26.4 57.1 58.1 0 13.3-4.8 26.5-13.4 37-.4.5-2.1 2.2-2.4 2.5-.3.3-1.1 1-1.1 1l-.1.1-35.5 31.2 103.2 90.4zm-35.3-.8h33l-102.4-89.6 36.4-32c.2-.2.7-.6 1-.9.3-.3 2-1.9 2.4-2.4 8.5-10.3 13.2-23.3 13.2-36.4 0-31.5-25.7-57.2-57.2-57.3h-1l-110 .1L8 38.2l111-.1h21.5c19.4 0 35.2 15.8 35.2 35.2 0 8.3-2.8 16-8 22.4-1 1.3-8.1 7.1-8.4 7.3l-12.4 10.6-35.2 31.4L214 234.7zm-35-120.9h-1.4l1-.8h.4v.8z" />
-            <path
-              d="M253.9 237.3H213l-.5-.4-104.8-91.7 1.8-1.6 35.6-31.7 12.5-10.6c4-3.3 7.5-6.4 8-7 4.9-5.9 7.5-13.1 7.5-20.8 0-18-14.7-32.7-32.7-32.7H2l26.4-27.2 117.2-.1-.2.2c30.6 2.6 54.8 28.5 54.8 59.6 0 13.7-4.9 27.3-13.8 38.1-.5.6-2.3 2.4-2.6 2.7-.3.3-1.2 1-1.2 1l-.5.4-33.6 29.5 105.4 92.3zm-39.2-4.3h27.7L142 145.1l33.6-29.5h-3.1l4.7-3.8.1-2.6 1.8 2 1.4.1c.2-.1.3-.3.4-.4.4-.3 1.9-1.9 2.2-2.2 8.3-10 12.8-22.6 12.8-35.3 0-30.6-24.9-55.5-55.5-55.5H30.3l-18 18.5 108.4-.1h19.7c20.4 0 37 16.6 37 37 0 8.7-2.9 16.8-8.4 23.5-.7.9-3.5 3.4-8.5 7.5L148 115.1l-33.7 30L214.7 233z" />
-          </g>
-          <defs>
-            <linearGradient id="paint0_linear" x1="205.549" y1="20.0169" x2="204.338" y2="342.461"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#1595B6" />
-              <stop offset="1" stop-color="#1595B6" stop-opacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="relative ml-6 md:ml-12">
-          <h1 class="pointer-events-none text-4xl md:text-[45px] font-['Spartan'] mr-12">
-            Rushikesh Deshmukh
+    </div>
+  </nav>
+
+  <main class="pt-24 sm:pt-28">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Available for Software Developer Roles
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Hi, I'm <span class="gradient-text">Rushikesh Deshmukh</span>
           </h1>
-          <p class="title  animated-text">Full Stack Developer</p>
 
-          <button id="popupButton"
-            class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group">
-            About Me
-            <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
-              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
-              xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-              xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" width="44"
-              height="44" viewBox="0 0 100 100"
-              class="absolute top-1/2 -translate-y-1/2 -right-7 group-hover:-right-8 ease-in-out duration-100">
-              <g transform="translate(0,-952.36218)">
-                <path style="
-                      text-indent: 0;
-                      text-transform: none;
-                      direction: ltr;
-                      block-progression: tb;
-                      baseline-shift: baseline;
-                      color: #000000;
-                      enable-background: accumulate;
-                    "
-                  d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z"
-                  fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible"
-                  display="inline" overflow="visible" />
-              </g>
-            </svg>
-          </button>
-          <div id="popup" class="popup hidden max-w-screen-xl mx-auto px-4" >
-            <div class="square">
-                 <div class="badge-base LI-profile-badge " style= "background: none;" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="rd-rushikesh-deshmukh" data-version="v1">
-                  <H1 ><a class="badge-base__link LI-simple-link cen" href="https://in.linkedin.com/in/rd-rushikesh-deshmukh?trk=profile-badge"> Rushikesh Deshmukh 👨‍💻</a></H1>
+          <!-- Dynamic Role Typewriter -->
+          <div class="text-xl sm:text-2xl font-semibold text-slate-300 min-h-[36px] flex items-center justify-center lg:justify-start gap-2">
+            <span class="text-sky-400">⚡</span>
+            <span id="typewriter-text" class="text-sky-400 font-mono border-r-2 border-sky-400 pr-1"></span>
+          </div>
+
+          <!-- Bio -->
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Backend Software Developer with <strong class="text-white">1.5+ years of experience</strong> engineering scalable microservices with <strong class="text-sky-300">Python (Django DRF, FastAPI)</strong>, <strong class="text-sky-300">PostgreSQL</strong>, and <strong class="text-sky-300">AWS Cloud</strong>. Passionate about query optimization, asynchronous queues (Celery/Redis), and Generative AI integration.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
+              <span>View Projects</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" download="Rushikesh_Deshmukh_Resume.pdf" class="px-6 py-3 rounded-xl glass-card text-slate-200 hover:text-white hover:border-sky-500/40 font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download Resume
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200">
+              Get in Touch
+            </a>
+          </div>
+
+          <!-- Social Links Bar -->
+          <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 text-slate-400">
+            <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="p-2.5 rounded-lg glass-card hover:text-sky-400 hover:border-sky-500/40 transition-colors" title="LinkedIn Profile">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com/rushi-code1" target="_blank" class="p-2.5 rounded-lg glass-card hover:text-sky-400 hover:border-sky-500/40 transition-colors" title="GitHub Profile">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="mailto:rushikesh.deshmukh1103@gmail.com" class="p-2.5 rounded-lg glass-card hover:text-sky-400 hover:border-sky-500/40 transition-colors" title="Send Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+            <a href="https://wa.me/918468970166?text=Hi%20Rushikesh,%20I%20saw%20your%20portfolio" target="_blank" class="p-2.5 rounded-lg glass-card hover:text-emerald-400 hover:border-emerald-500/40 transition-colors" title="WhatsApp Chat">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Card / Metrics -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md">
+            
+            <!-- Main Glass Card -->
+            <div class="glass-card p-6 sm:p-8 rounded-3xl relative z-10 border-slate-700/60 shadow-2xl">
+              
+              <!-- Card Header -->
+              <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-xl shadow-lg">
+                    👨‍💻
+                  </div>
+                  <div>
+                    <h2 class="font-bold text-base text-white">Rushikesh Deshmukh</h2>
+                    <p class="text-xs text-sky-400 font-mono">Pune, Maharashtra</p>
+                  </div>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  Backend Engineer
+                </span>
               </div>
-                <h3>Technical Skills ⚙️:</h3>
-                <p>Data Science: 📊🤖
-                  Machine Learning 🧠
-                  Data Analytics 📉
-                  Python 🐍
-                  TensorFlow 📦
-                  Flask 🌐
-                  Django 🛠️
-                  HTML 📜
-                  CSS 🎨
-                  ReactJS ⚛️
-                  AWS ☁️</p>   
 
-              <a style="margin-top: 10px;" onclick="close()" id="close" class= "button bob">Close ❌</a>
+              <!-- Metrics Grid -->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-sky-500/30 transition-all">
+                  <div class="text-2xl font-bold text-sky-400">1.5+ <span class="text-xs font-normal text-slate-400">Years</span></div>
+                  <div class="text-xs text-slate-400 mt-1">Backend Experience</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/30 transition-all">
+                  <div class="text-2xl font-bold text-emerald-400">35% <span class="text-xs font-normal text-slate-400">Cut</span></div>
+                  <div class="text-xs text-slate-400 mt-1">DB Query Latency</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-indigo-500/30 transition-all">
+                  <div class="text-2xl font-bold text-indigo-400">85%+ <span class="text-xs font-normal text-slate-400">Cov</span></div>
+                  <div class="text-xs text-slate-400 mt-1">PyTest Test Coverage</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-purple-500/30 transition-all">
+                  <div class="text-2xl font-bold text-purple-400">98%+ <span class="text-xs font-normal text-slate-400">Acc</span></div>
+                  <div class="text-xs text-slate-400 mt-1">GenAI Document Parsing</div>
+                </div>
+              </div>
 
+              <!-- Tech Highlights Stack -->
+              <div class="space-y-2">
+                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Core Stack</div>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip text-sky-400">Python</span>
+                  <span class="tech-chip text-sky-400">Django DRF</span>
+                  <span class="tech-chip text-sky-400">FastAPI</span>
+                  <span class="tech-chip text-sky-400">PostgreSQL</span>
+                  <span class="tech-chip text-sky-400">AWS (EC2/S3/RDS)</span>
+                  <span class="tech-chip text-sky-400">Celery & Redis</span>
+                  <span class="tech-chip text-sky-400">LangChain & Gemini</span>
+                  <span class="tech-chip text-sky-400">PyTest</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Decorative floating background elements -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-sky-500/20 rounded-full blur-xl pointer-events-none"></div>
+            <div class="absolute -bottom-4 -left-4 w-28 h-28 bg-indigo-500/20 rounded-full blur-xl pointer-events-none"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME & SUMMARY SECTION -->
+    <section id="about" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">About Me</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Engineering Resilient & High-Performance Backends</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Backend Architecture -->
+          <div class="glass-card p-8 rounded-2xl space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
+              ⚙️
+            </div>
+            <h3 class="text-xl font-bold text-white">Scalable Microservices</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Extensive experience designing robust RESTful APIs & asynchronous microservices using <strong>Django DRF</strong> and <strong>FastAPI</strong>. Dedicated to clean architecture, modularity, and high maintainability.
+            </p>
+          </div>
+
+          <!-- Card 2: Database & Caching Optimization -->
+          <div class="glass-card p-8 rounded-2xl space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
+              ⚡
+            </div>
+            <h3 class="text-xl font-bold text-white">Database & Queue Tuning</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Specialized in <strong>PostgreSQL</strong> optimization (eliminating N+1 queries with <code class="text-xs text-sky-300">select_related</code> / <code class="text-xs text-sky-300">prefetch_related</code>) and distributed background worker queues with <strong>Celery & Redis</strong>.
+            </p>
+          </div>
+
+          <!-- Card 3: Cloud & GenAI Integration -->
+          <div class="glass-card p-8 rounded-2xl space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
+              ☁️
+            </div>
+            <h3 class="text-xl font-bold text-white">AWS Cloud & GenAI</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Hands-on with <strong>AWS (EC2 Linux, S3 storage, RDS, IAM least-privilege)</strong> and cutting-edge Generative AI workflows with <strong>LangChain</strong> and <strong>Google Gemini 1.5</strong> for unstructured data parsing.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Technical Arsenal</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Technologies</p>
+          <p class="text-slate-400 text-sm mt-3">Production-tested tools and frameworks used across my work experience and projects.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- 1. Languages & Core -->
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🐍</span>
+              <h3 class="font-bold text-lg text-white">Languages & Fundamentals</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip text-sky-300">Python</span>
+              <span class="tech-chip">Data Structures & Algorithms</span>
+              <span class="tech-chip">Object-Oriented Programming (OOP)</span>
+              <span class="tech-chip">SQL</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">C Programming</span>
+            </div>
+          </div>
+
+          <!-- 2. Frameworks & Backend -->
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🛠️</span>
+              <h3 class="font-bold text-lg text-white">Frameworks & Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip text-sky-300 font-semibold">Django (WSGI/ASGI)</span>
+              <span class="tech-chip text-sky-300 font-semibold">Django REST Framework (DRF)</span>
+              <span class="tech-chip text-sky-300 font-semibold">FastAPI</span>
+              <span class="tech-chip">Celery (Worker Queues)</span>
+              <span class="tech-chip">Flask</span>
+              <span class="tech-chip">LangChain (GenAI)</span>
+            </div>
+          </div>
+
+          <!-- 3. Cloud & DevOps -->
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">☁️</span>
+              <h3 class="font-bold text-lg text-white">Cloud & DevOps</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip text-emerald-300 font-semibold">Amazon Web Services (AWS)</span>
+              <span class="tech-chip">AWS EC2 (Linux)</span>
+              <span class="tech-chip">AWS S3 (Object Storage)</span>
+              <span class="tech-chip">AWS RDS</span>
+              <span class="tech-chip">AWS IAM & Security Groups</span>
+              <span class="tech-chip">Docker</span>
+              <span class="tech-chip">Linux / Bash Scripting</span>
+            </div>
+          </div>
+
+          <!-- 4. Databases & Caching -->
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🗄️</span>
+              <h3 class="font-bold text-lg text-white">Databases & Caching</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip text-sky-300 font-semibold">PostgreSQL (Query Optimization)</span>
+              <span class="tech-chip">Redis (Pub/Sub & Cache)</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">MongoDB</span>
+              <span class="tech-chip">ORM Query Indexing</span>
+            </div>
+          </div>
+
+          <!-- 5. APIs & Architecture -->
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🔗</span>
+              <h3 class="font-bold text-lg text-white">APIs & Protocols</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip">RESTful APIs</span>
+              <span class="tech-chip text-sky-300">WebSockets (Real-time)</span>
+              <span class="tech-chip">JWT & OAuth2 Auth</span>
+              <span class="tech-chip">Swagger / OpenAPI</span>
+              <span class="tech-chip">Third-Party Integrations</span>
+              <span class="tech-chip">Microservices Architecture</span>
+            </div>
+          </div>
+
+          <!-- 6. Testing & Tools -->
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🧪</span>
+              <h3 class="font-bold text-lg text-white">Testing & Productivity</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip text-indigo-300 font-semibold">PyTest (Automated Testing)</span>
+              <span class="tech-chip">unittest</span>
+              <span class="tech-chip">Git & GitHub</span>
+              <span class="tech-chip">Agile / Scrum</span>
+              <span class="tech-chip">Code Reviews</span>
+              <span class="tech-chip">GitHub Copilot / Cursor</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section id="experience" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Career Journey</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</p>
+          <p class="text-slate-400 text-sm mt-3">Track record of delivering production backend systems, database optimizations, and machine learning models.</p>
+        </div>
+
+        <div class="relative pl-8 sm:pl-10 border-l-2 border-slate-800 space-y-12">
+
+          <!-- 1. Full-Time Software Developer -->
+          <div class="timeline-item relative">
+            <div class="glass-card p-6 sm:p-8 rounded-2xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Software Developer</h3>
+                  <p class="text-sm font-semibold text-sky-400">Edso Services Pvt. Ltd. (PeopleNexusAI)</p>
+                </div>
+                <div class="text-left sm:text-right">
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    Jul 2025 – Present
+                  </span>
+                  <p class="text-xs text-slate-400 mt-1">Pune, India</p>
+                </div>
+              </div>
+
+              <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+                <li>Designed and deployed scalable backend microservices and REST APIs using <strong class="text-white">Django DRF</strong> and <strong class="text-white">FastAPI</strong>.</li>
+                <li>Optimized PostgreSQL data-access layers via Django ORM (<code class="text-xs text-sky-300">select_related</code>, <code class="text-xs text-sky-300">prefetch_related</code>), eliminating N+1 queries and reducing database latency by <strong class="text-emerald-400">35%</strong>.</li>
+                <li>Architected distributed background worker pipelines using <strong class="text-white">Celery & Redis</strong>, integrating <strong class="text-white">LangChain & Gemini 1.5</strong> for automated dataset extraction.</li>
+                <li>Configured secure <strong class="text-white">AWS EC2 Linux instances</strong>, managed <strong class="text-white">S3 asset storage</strong>, and enforced <strong class="text-white">AWS IAM</strong> least-privilege security policies.</li>
+                <li>Authored automated test suites with <strong class="text-white">PyTest</strong> maintaining <strong class="text-emerald-400">85%+ test coverage</strong> and led agile sprint code reviews.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Software Developer Intern -->
+          <div class="timeline-item relative">
+            <div class="glass-card p-6 sm:p-8 rounded-2xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Software Developer Intern</h3>
+                  <p class="text-sm font-semibold text-sky-400">Edso Services Pvt. Ltd. (PeopleNexusAI)</p>
+                </div>
+                <div class="text-left sm:text-right">
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">
+                    Mar 2025 – Jun 2025
+                  </span>
+                  <p class="text-xs text-slate-400 mt-1">Pune, India</p>
+                </div>
+              </div>
+
+              <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+                <li>Developed RESTful API endpoints and database migrations using <strong class="text-white">Django & DRF</strong> under senior engineer mentorship.</li>
+                <li>Optimized database interactions and resolved API performance bottlenecks, adhering to strict production code conventions.</li>
+                <li>Authored unit test cases and actively participated in daily agile sprint reviews, resulting in a full-time Software Developer job offer.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Data Science / ML Intern -->
+          <div class="timeline-item relative">
+            <div class="glass-card p-6 sm:p-8 rounded-2xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Data Science Intern</h3>
+                  <p class="text-sm font-semibold text-sky-400">Ai Variant</p>
+                </div>
+                <div class="text-left sm:text-right">
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">
+                    Aug 2024 – Dec 2024
+                  </span>
+                  <p class="text-xs text-slate-400 mt-1">Pune, India</p>
+                </div>
+              </div>
+
+              <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+                <li>Built and evaluated a Bankruptcy Prediction ML classification model achieving <strong class="text-emerald-400">95% accuracy</strong> and reducing prediction error by <strong class="text-emerald-400">20%</strong>.</li>
+                <li>Streamlined data preprocessing and feature engineering pipelines using <strong class="text-white">Pandas & NumPy</strong>, cutting pipeline runtime by <strong class="text-emerald-400">40%</strong>.</li>
+                <li>Delivered interactive data visualization dashboards and actionable risk-mitigation insights to cross-functional stakeholders.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Featured Work</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Key Projects & Applications</p>
+          <p class="text-slate-400 text-sm mt-3">A selection of backend systems, asynchronous pipelines, and AI platforms.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Project 1: Async AI Document Parser -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">📄</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20">GenAI Microservice</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Async AI Document Parser</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Asynchronous document parsing microservice integrating <strong>FastAPI</strong>, <strong>LangChain</strong>, and <strong>Google Gemini 1.5</strong>. Automates entity extraction to transform unstructured business files into structured JSON schemas with <strong class="text-purple-400">98%+ accuracy</strong>.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="tech-chip">FastAPI</span>
+                <span class="tech-chip">LangChain</span>
+                <span class="tech-chip">Gemini 1.5</span>
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">JSON Schema</span>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                <a href="https://github.com/Rushi-code1/async-document-parser" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Repository</span>
+                </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
-          <li>
-            <a style="color:#4CAF50 ;" href="https://www.linkedin.com/in/rd-rushikesh-deshmukh/" target="_blank">
-              <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path fill="currentColor"
-                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-              </svg>
-            </a>
-          </li>
+          <!-- Project 2: WebSocket Real-Time Messaging -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">💬</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20">Real-Time Messaging</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">WebSocket Messaging Engine</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Engineered full-stack real-time messaging layer with secure Django REST APIs and React, backed by Redis pub/sub. Achieved <strong class="text-sky-400">sub-50ms latency</strong> and a <strong class="text-sky-400">95% drop reduction</strong>, validated with PyTest.
+              </p>
+            </div>
 
-          <li>
-            <a style="color:#4CAF50 ;" href="mailto:deshmukhrushi3432@gmail.com" target="_blank">
-              <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor"
-                  d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a style="color:#4CAF50 ;" href="https://github.com/Rushi-code1/">
-              <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="currentColor">
-                <path
-                  d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.089-.745.084-.73.084-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.236-3.221-.123-.304-.536-1.53.117-3.19 0 0 1.008-.323 3.301 1.23.957-.267 1.983-.4 3.003-.404 1.02.004 2.046.137 3.003.404 2.29-1.554 3.296-1.23 3.296-1.23.656 1.66.243 2.886.12 3.19.771.84 1.233 1.911 1.233 3.221 0 4.61-2.805 5.624-5.477 5.921.43.372.823 1.102.823 2.222v3.293c0 .32.19.694.803.576C20.565 22.09 24 17.597 24 12.297c0-6.627-5.373-12-12-12z" />
-              </svg>
-
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:left-1/2 after:-translate-x-1/2 after:top-[100px]">
-        <button
-          class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group mb-20">
-          <a href="#Latest Works">Latest Works</a>
-
-          <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
-            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
-            xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" width="44"
-            height="44" viewBox="0 0 100 100"
-            class="absolute rotate-90 left-1/2 -translate-x-1/2 top-11 group-hover:top-12 ease-in-out duration-100">
-            <g transform="translate(0,-952.36218)">
-              <path style="
-                  text-indent: 0;
-                  text-transform: none;
-                  direction: ltr;
-                  block-progression: tb;
-                  baseline-shift: baseline;
-                  color: #000000;
-                  enable-background: accumulate;
-                "
-                d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z"
-                fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible"
-                display="inline" overflow="visible" />
-            </g>
-          </svg>
-        </button>
-      </div>
-  </section>
-  <section name="Latest Works" class="max-w-screen-xl mx-auto px-4 relative pb-8 sm:pb-16">
-    <h2 id="Latest Works"
-      class="text-3xl sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 w-max mx-auto text-center text-[#1788ae] sm:border-b-2 border-[#1788ae]">
-      Latest Works
-    </h2>
-    <div class="flex flex-col sm:flex-row gap-4 mt-8 sm:gap-[80px] items-center sm:mt-20 relative">
-      <div class="h-[1px] left-1/4 right-1/2 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
-      <div
-        class="w-4 h-4 rounded-full border-[3px] border-[#459bd5] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
-      </div>
-      <a href="https://github.com/Rushi-code1/AI-Powered-Chatbot-Generator" class="flex w-full relative justify-center sm:justify-start">
-        <div class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200">
-          <img class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
-            src="./assets/images/Screenshot_2024-10-07_164201-removebg-preview.png" alt="" />
-          <span
-            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#459bd5] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">AI Chatbot
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-external-link">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <div class="w-full">
-        <h3 class="text-[#459bd5] font-bold text-2xl md:text-4xl">
-          AI-powered Chatbot Generator
-        </h3>
-        <span class="text-[#459bd5] text-base md:text-lg">(Chatbot development platform)</span>
-        <p class="text-justify text-sm md:text-base mt-2">
-          Developed a sophisticated chatbot generator utilizing machine learning algorithms for natural language
-          processing.
-        </p>
-
-        <ul class="flex flex-wrap gap-2 mt-2">
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #HTML
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Chatbot
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Flask
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Chatterbot
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #NLP
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Machine Learning
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #css
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #javascript
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #figma
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
-      <div class="order-2 sm:order-1 w-full">
-        <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
-            Automated Exploratory Data Analysis
-        </h3>
-        <span class="text-[#ffe578] text-base md:text-lg">(Automation)</span>
-        <p class="text-justify text-sm md:text-base mt-2">
-          Developed an Automated Exploratory Data Analysis (EDA) system that efficiently analyzes and visualizes datasets, providing insights through statistical summaries, correlation matrices, and interactive visualizations.
-        </p>
-
-        <ul class="flex flex-wrap gap-2 mt-2">
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Python
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Sklearn
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Streamlit
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Seaborn/Matloplinb
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #EDA
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Pandas
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Numpy/Scipy
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Datascience
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Machine Learning
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Data Analysis
-          </li>
-        </ul>
-      </div>
-      <div class="h-[1px] left-1/2 right-1/4 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
-      <div
-        class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
-      </div>
-      <a href="#" class="order-1 sm:order-2 flex w-full relative justify-center sm:justify-start">
-        <div class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 sm:ml-auto">
-          <img class="max-w-[400px] w-full relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
-            src="./assets/images/Screenshot_2024-11-28_142132-removebg-preview.png" alt="" />
-          <span
-            class="flex group-hover:-top-14 ease-jump duration-200 text-black bg-[#ffe578] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">EDA SYSTEAM
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-external-link">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </span>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
-      <div class="h-[1px] left-1/4 right-1/2 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
-      <div
-        class="w-4 h-4 rounded-full border-[3px] border-[#fc815c] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
-      </div>
-      <a href="https://github.com/Rushi-code1/Restorent_Web_Flask_App_" class="flex w-full relative justify-center sm:justify-start">
-        <div class="flex flex-col items-center relative group hover:scale-105 ease-in-out sm:mr-auto duration-200">
-          <img class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
-            src="./assets/images/Screenshot 2024-10-07 160702.png" alt="" />
-          <span
-            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#fc815c] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Restorent
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-external-link">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <div class="w-full">
-        <h3 class="text-[#fc815c] font-bold text-2xl md:text-4xl">
-          Restaurant
-        </h3>
-        <span class="text-[#fc815c] text-base md:text-lg">(Table Booking)</span>
-        <p class="text-justify text-sm md:text-base mt-2">
-          The web app enables restaurant owners to maintain an online presence, manage menus, process orders, and
-          interact with customers seamlessly.
-        </p>
-
-        <ul class="flex flex-wrap gap-2 mt-2">
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #HTML
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #css
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #javascript
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Flask
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Mysql
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Bootstrap
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
-      <div class="order-2 sm:order-1 w-full">
-        <h3 class="text-[#47afa1] font-bold text-2xl md:text-4xl">
-          Anime Recommendation System
-        </h3>
-        <span class="text-[#47afa1] text-base md:text-lg">(Recommendation System)</span>
-        <p class="text-justify text-sm md:text-base mt-2">
-          This project is an Anime Recommendation System built using Python, pandas, and Streamlit. It allows users to
-          explore anime data, filter by genre and type, and receive personalized anime recommendations. The app can
-          either load a default dataset or allow users to upload their own anime dataset for custom recommendations.
-        </p>
-
-        <ul class="flex flex-wrap gap-2 mt-2">
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Streamlit
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Recommendation System
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Python
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Machine Learning
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Pandas
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Matplotlib
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Scikit-Learn
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #figma
-          </li>
-        </ul>
-      </div>
-      <div class="h-[1px] left-1/2 right-1/4 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
-      <div
-        class="w-4 h-4 rounded-full border-[3px] border-[#47afa1] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
-      </div>
-      <a href="https://anime-recommendation-system-qj8kf9kcjjbjmznobdmsjg.streamlit.app/" class="order-1 sm:order-2 flex w-full relative justify-center sm:justify-start">
-        <div class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 sm:ml-auto">
-          <img class="max-w-[400px] w-full relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
-            src="./assets/images/project4.png" alt="" />
-          <span
-            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#47afa1] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Recommendation
-            System <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-external-link">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </span>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
-      <div class="h-[1px] left-1/4 right-1/2 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
-      <div
-        class="w-4 h-4 rounded-full border-[3px] border-[#fc815c] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
-      </div>
-      <a href="https://github.com/Rushi-code1/Sales_Dashboard" class="flex w-full relative justify-center sm:justify-start">
-        <div class="flex flex-col items-center relative group hover:scale-105 ease-in-out sm:mr-auto duration-200">
-          <img class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
-            src="./assets/images/Screenshot_2024-11-28_133119-removebg-preview.png" alt="" />
-          <span
-            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#fc815c] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">
-            Power BI
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-external-link">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <div class="w-full">
-        <h3 class="text-[#fc815c] font-bold text-2xl md:text-4xl">
-          Product Sale BI Dashboard
-        </h3>
-        <span class="text-[#fc815c] text-base md:text-lg">Power BI Dashboard</span>
-        <p class="text-justify text-sm md:text-base mt-2">
-         Designed and implemented an interactive BI dashboard with Power BI, providing real-time insights into sales
-          trends, customer behavior, and inventory levels, resulting in a 25% increase in decision-making efficiency.
-        </p>
-
-        <ul class="flex flex-wrap gap-2 mt-2">
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Power BI
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #DAX
-          </li>
-          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-            #Excel
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="w-[2px] hidden sm:block bg-[#1788ae] absolute top-0 bottom-0 left-1/2 -translate-x-1/2"></div>
-  </section>
-
-  <section name="Let's Connect" id="Let's Connect" class="max-w-screen-xl mx-auto px-4 pb-12">
-    <h2
-      class="text-3xl sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 w-max mx-auto text-center text-[#1788ae] sm:border-2 border-[#1788ae] rounded-md">
-      Let's Connect
-    </h2>
-    <div class="flex flex-col md:flex-row items-center mt-10">
-      <div class="w-full">
-        <img src="./assets/images/contact-me.svg" alt="phone" />
-      </div>
-      <form class="w-full" name="contactUS" netlify>
-        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-        <div class="relative mb-4">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-            </svg>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="tech-chip">Django DRF</span>
+                <span class="tech-chip">WebSockets</span>
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">Redis</span>
+                <span class="tech-chip">PyTest</span>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                <a href="https://github.com/Rushi-code1/realtime-chat-app" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+            </div>
           </div>
-          <input type="text" id="name" name="name"
-            class="bg-gray-50 border-2 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1788ae] focus:border-[#1788ae] block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            placeholder="Enter your name" />
-        </div>
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
-        <div class="relative mb-4">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 20 16">
-              <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-              <path
-                d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-            </svg>
+
+          <!-- Project 3: Background Task Processor -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">⚙️</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">Async Task Pipeline</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Scalable Background Task Processor</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Asynchronous worker pipeline integrating Gmail API via REST, offloading blocking I/O to improve response times by <strong class="text-amber-400">45%</strong>. Features task prioritization, dead-letter retries, and AWS EC2 deployment.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="tech-chip">Django DRF</span>
+                <span class="tech-chip">Celery</span>
+                <span class="tech-chip">Redis</span>
+                <span class="tech-chip">Gmail API</span>
+                <span class="tech-chip">AWS EC2</span>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                <a href="https://github.com/Rushi-code1/email-sending-app" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+            </div>
           </div>
-          <input type="text" id="email" name="email"
-            class="bg-gray-50 border-2 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1788ae] focus:border-[#1788ae] block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            placeholder="name@procodrr.com" />
-        </div>
-        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-        <div class="relative mb-4">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"></div>
-          <textarea id="message" name="message" rows="8"
-            class="bg-gray-50 border-2 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1788ae] focus:border-[#1788ae] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"></textarea>
-        </div>
-        <button type="submit"
-          class="w-full text-white bg-[#1788ae] hover:bg-[#1280a4] focus:ring-4 focus:ring-[#4489a0] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
-          Send
-        </button>
-      </form>
-    </div>
-  </section>
-  <footer class="flex flex-col items-center pb-10">
-    <p class="text-xs text-gray-300">Rushikesh Deshmukh© 2024</p>
-    <div class="black-logo my-4">
-      <svg class="glow" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 256 256">
-        <path fill="#4595eb" d="M53.2 145.1l81.9-71.7h-34.3L19 145.1l102.8 90h34.3l-102.9-90" />
-        <g fill="#4595eb">
-          <path
-            d="M145.3 145.1l36-31.6s.8-.7 1.1-1l2.4-2.4c8.5-10.3 13.3-23.3 13.3-36.7 0-31.8-25.8-57.7-57.6-57.7l-111.1.1L7.2 38.6l111.4-.1h21.9c19.2 0 34.8 15.6 34.8 34.8 0 8.2-2.7 15.8-8 22.2-1 1.3-8.3 7.3-8.3 7.3l-12.4 10.6-35.6 31.7 102.9 90h34.3l-102.9-90zm33.4-31.7h.2-.2z" />
-          <path
-            d="M252.8 236.9h-39.6l-.5-.4-104.4-91.3 37.1-33 12.5-10.6c3.5-2.9 7.5-6.3 8.1-7 5-6 7.6-13.3 7.6-21.1 0-18.2-14.8-33.1-33.1-33.1H3L28.6 14h115.8l-.1.1c31 2 55.6 27.8 55.6 59.3 0 13.6-4.9 27.1-13.7 37.8-.5.6-2.2 2.3-2.6 2.6-.3.3-1.2 1-1.2 1l-.5.4-34 29.8 104.9 91.9zm-38.3-3.5h29l-100.9-88.3 34.1-29.9h-2.2l3.6-3.5h1v1.5l1.6-1.4c.2-.2.4-.4.6-.5.4-.3 1.9-1.9 2.2-2.2 8.3-10.1 12.9-22.8 12.9-35.6 0-30.8-25.1-55.9-55.9-55.9h-3.9l-106.5-.1-18.8 19.4 109-.1h20.1c20.2 0 36.6 16.4 36.6 36.6 0 8.6-2.9 16.6-8.4 23.3-1 1.3-7.3 6.5-8.5 7.5l-12.4 10.6-34.1 30.3 100.9 88.3z" />
-          <path
-            d="M249.3 235.5h-35.5l-.1-.1-103.2-90.3.3-.3 35.6-31.7 12.4-10.6c2.5-2.1 7.5-6.2 8.3-7.2 5.1-6.2 7.9-13.8 7.9-21.9 0-19-15.4-34.4-34.4-34.4H6.2l23-23.7h.2l112.1-.1c31.6.5 57.1 26.4 57.1 58.1 0 13.3-4.8 26.5-13.4 37-.4.5-2.1 2.2-2.4 2.5-.3.3-1.1 1-1.1 1l-.1.1-35.5 31.2 103.2 90.4zm-35.3-.8h33l-102.4-89.6 36.4-32c.2-.2.7-.6 1-.9.3-.3 2-1.9 2.4-2.4 8.5-10.3 13.2-23.3 13.2-36.4 0-31.5-25.7-57.2-57.2-57.3h-1l-110 .1L8 38.2l111-.1h21.5c19.4 0 35.2 15.8 35.2 35.2 0 8.3-2.8 16-8 22.4-1 1.3-8.1 7.1-8.4 7.3l-12.4 10.6-35.2 31.4L214 234.7zm-35-120.9h-1.4l1-.8h.4v.8z" />
-          <path
-            d="M253.9 237.3H213l-.5-.4-104.8-91.7 1.8-1.6 35.6-31.7 12.5-10.6c4-3.3 7.5-6.4 8-7 4.9-5.9 7.5-13.1 7.5-20.8 0-18-14.7-32.7-32.7-32.7H2l26.4-27.2 117.2-.1-.2.2c30.6 2.6 54.8 28.5 54.8 59.6 0 13.7-4.9 27.3-13.8 38.1-.5.6-2.3 2.4-2.6 2.7-.3.3-1.2 1-1.2 1l-.5.4-33.6 29.5 105.4 92.3zm-39.2-4.3h27.7L142 145.1l33.6-29.5h-3.1l4.7-3.8.1-2.6 1.8 2 1.4.1c.2-.1.3-.3.4-.4.4-.3 1.9-1.9 2.2-2.2 8.3-10 12.8-22.6 12.8-35.3 0-30.6-24.9-55.5-55.5-55.5H30.3l-18 18.5 108.4-.1h19.7c20.4 0 37 16.6 37 37 0 8.7-2.9 16.8-8.4 23.5-.7.9-3.5 3.4-8.5 7.5L148 115.1l-33.7 30L214.7 233z" />
-        </g>
-      </svg>
-    </div>
-    <ul class="mx-auto flex items-center justify-center gap-6 text-[#b0b2c3]">
-      <li>
-        <a style="color:#4CAF50 ;" href="https://www.linkedin.com/in/rd-rushikesh-deshmukh/" target="_blank">
-          <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path fill="currentColor"
-              d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-          </svg>
-        </a>
-      </li>
 
-      <li>
-        <a style="color:#4CAF50 ;" href="mailto:deshmukhrushi3432@gmail.com" target="_blank">
-          <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path fill="currentColor"
-              d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a style="color:#4CAF50 ;" href="https://github.com/Rushi-code1/" target="_blank">
-          <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.089-.745.084-.73.084-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.467-2.381 1.236-3.221-.123-.304-.536-1.53.117-3.19 0 0 1.008-.323 3.301 1.23.957-.267 1.983-.4 3.003-.404 1.02.004 2.046.137 3.003.404 2.29-1.554 3.296-1.23 3.296-1.23.656 1.66.243 2.886.12 3.19.771.84 1.233 1.911 1.233 3.221 0 4.61-2.805 5.624-5.477 5.921.43.372.823 1.102.823 2.222v3.293c0 .32.19.694.803.576C20.565 22.09 24 17.597 24 12.297c0-6.627-5.373-12-12-12z" />
-          </svg>
+          <!-- Project 4: Bankruptcy Prediction & Automated EDA -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">📊</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Machine Learning</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Bankruptcy ML & Automated EDA</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Automated dataset profiling, exploratory analysis, and classification system built with <strong>Python, Scikit-learn, and Streamlit</strong>. Delivers statistical correlation models and <strong class="text-emerald-400">95% prediction accuracy</strong>.
+              </p>
+            </div>
 
-        </a>
-      </li>
-    </ul>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">Scikit-learn</span>
+                <span class="tech-chip">Streamlit</span>
+                <span class="tech-chip">Pandas & NumPy</span>
+                <span class="tech-chip">EDA</span>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                <a href="https://github.com/Rushi-code1/Bankruptcy-Prediction" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: AI-Powered Chatbot Generator -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🤖</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">NLP & Web Platform</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">AI Chatbot Generator</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Custom conversational agent generator powered by natural language processing and machine learning algorithms for human-like interactive dialogues and multi-platform deployment.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">Flask</span>
+                <span class="tech-chip">NLP</span>
+                <span class="tech-chip">ChatterBot</span>
+                <span class="tech-chip">Machine Learning</span>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                <a href="https://github.com/Rushi-code1/AI-Powered-Chatbot-Generator" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Anime Recommendation System -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🎬</span>
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-teal-500/10 text-teal-400 border border-teal-500/20">Recommender System</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Anime Recommendation Engine</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Content-based personalized anime recommendation application built with <strong>Streamlit, Pandas, and Scikit-Learn</strong>. Features genre similarity filtering and live dataset exploration.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">Streamlit</span>
+                <span class="tech-chip">Scikit-Learn</span>
+                <span class="tech-chip">Pandas</span>
+                <span class="tech-chip">Cosine Similarity</span>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                <a href="https://github.com/Rushi-code1/Anime-Recommendation-System" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS SECTION -->
+    <section id="education" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Qualifications</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Education & Certifications</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Education Card -->
+          <div class="glass-card p-8 rounded-2xl space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
+                🎓
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Bachelor of Engineering (B.E.)</h3>
+                <p class="text-sm font-semibold text-sky-400">Computer Science and Engineering</p>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">SSBT College of Engineering & Technology, Jalgaon</span>
+                <span class="text-xs font-mono text-slate-400">2020 – 2024</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+                <span class="text-xs text-slate-400 font-medium">Cumulative Grade Point Average</span>
+                <span class="text-base font-bold text-emerald-400 font-mono">CGPA: 8.91 / 10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Card -->
+          <div class="glass-card p-8 rounded-2xl space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
+                📜
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Professional Certifications</h3>
+                <p class="text-sm font-semibold text-indigo-400">Verified Credentials</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Data Science Certificate (KNIME)</h4>
+                  <p class="text-xs text-slate-400">ExcelR Solutions</p>
+                </div>
+                <span class="text-xs font-mono text-slate-400">2024</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Deep Learning Specialization</h4>
+                  <p class="text-xs text-slate-400">Coursera (DeepLearning.AI)</p>
+                </div>
+                <span class="text-xs font-mono text-slate-400">2024</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Programming in C</h4>
+                  <p class="text-xs text-slate-400">NPTEL (IIT Kharagpur)</p>
+                </div>
+                <span class="text-xs font-mono text-slate-400">2022</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest font-bold text-sky-400 mb-2">Let's Connect</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Get in Touch</p>
+          <p class="text-slate-400 text-sm mt-3">Interested in collaborating or discussing software development opportunities? Reach out!</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Info Cards (Left) -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <!-- Email Item -->
+            <div class="glass-card p-5 rounded-2xl flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-medium">Email Address</div>
+                  <a href="mailto:rushikesh.deshmukh1103@gmail.com" class="text-sm font-semibold text-white hover:text-sky-400 transition-colors">rushikesh.deshmukh1103@gmail.com</a>
+                </div>
+              </div>
+              <button onclick="copyEmail()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" title="Copy Email">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </button>
+            </div>
+
+            <!-- Phone / WhatsApp Item -->
+            <div class="glass-card p-5 rounded-2xl flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">Phone & WhatsApp</div>
+                <a href="https://wa.me/918468970166" target="_blank" class="text-sm font-semibold text-white hover:text-emerald-400 transition-colors">+91 8468970166</a>
+              </div>
+            </div>
+
+            <!-- Location Item -->
+            <div class="glass-card p-5 rounded-2xl flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">Location</div>
+                <span class="text-sm font-semibold text-white">Pune, Maharashtra, India</span>
+              </div>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div class="glass-card p-5 rounded-2xl flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-medium">LinkedIn</div>
+                  <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="text-sm font-semibold text-sky-400 hover:underline">rd-rushikesh-deshmukh</a>
+                </div>
+              </div>
+              <a href="https://linkedin.com/in/rd-rushikesh-deshmukh" target="_blank" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-sky-500/10 text-sky-400 hover:bg-sky-500/20 transition-colors">
+                Connect →
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Contact Form (Right) -->
+          <div class="lg:col-span-7">
+            <form id="contact-form" class="glass-card p-8 rounded-3xl space-y-5">
+              <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+              
+              <div>
+                <label for="form-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" id="form-name" required placeholder="e.g. Alex Johnson"
+                       class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
+              </div>
+
+              <div>
+                <label for="form-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                <input type="email" id="form-email" required placeholder="e.g. alex@example.com"
+                       class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                <textarea id="form-message" rows="4" required placeholder="Write your message or inquiry here..."
+                          class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all"></textarea>
+              </div>
+
+              <button type="submit"
+                      class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                <span>Send Message</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <div class="flex items-center justify-center gap-6 text-slate-400">
+        <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+        <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+        <a href="./assets/Rushikesh_Deshmukh_Resume.pdf" target="_blank" class="hover:text-sky-400 transition-colors">Resume</a>
+        <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+      </div>
+      <p>© 2026 Rushikesh Deshmukh. Built with precision, performance & modern web standards.</p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    // Function to speak text using Web Speech API with a female voice
-
-  </script>
-  
+  <!-- Scripts -->
   <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
-  <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
 </body>
-
 </html>
